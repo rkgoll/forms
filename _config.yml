@@ -1,0 +1,12 @@
+# Site settings
+title: WebbyKids
+description: 
+baseurl: "" 
+url: "http://www.webbykids.com" 
+
+# Build settings
+markdown: kramdown
+port: 8000
+sass:
+  sass_dir: assets/css
+  style: :nested
