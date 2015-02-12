@@ -1,8 +1,8 @@
 # Site settings
-title: WebbyKids
+title: LendLift
 description: 
 baseurl: "" 
-url: "http://www.webbykids.com" 
+url: "http://www.lendlift.com" 
 
 # Build settings
 markdown: kramdown
