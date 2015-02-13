@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>WebbyKids</title>
+    <title>LendLift</title>
     <description></description>
-    <link>http://www.webbykids.com/</link>
-    <atom:link href="http://www.webbykids.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 10 Feb 2015 22:40:48 -0500</pubDate>
-    <lastBuildDate>Tue, 10 Feb 2015 22:40:48 -0500</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <link>http://www.lendlift.com/</link>
+    <atom:link href="http://www.lendlift.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 12 Feb 2015 19:49:37 -0500</pubDate>
+    <lastBuildDate>Thu, 12 Feb 2015 19:49:37 -0500</lastBuildDate>
+    <generator>Jekyll v2.5.2</generator>
     
       <item>
         <title>Welcome to Jekyll!</title>
@@ -27,8 +27,8 @@
 
 </description>
         <pubDate>Fri, 16 Jan 2015 16:04:45 -0500</pubDate>
-        <link>http://www.webbykids.com/jekyll/update/2015/01/16/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://www.webbykids.com/jekyll/update/2015/01/16/welcome-to-jekyll.html</guid>
+        <link>http://www.lendlift.com/jekyll/update/2015/01/16/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://www.lendlift.com/jekyll/update/2015/01/16/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
