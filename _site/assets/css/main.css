@@ -288,17 +288,17 @@ body {
         margin-top: 20px; }
       .page-container .wrapper .form li {
         margin-bottom: 20px; }
-      .page-container .wrapper .form input[type="button"] {
+      .page-container .wrapper .form input[type="submit"], .page-container .wrapper .form input[type="button"] {
         border: solid 1px green;
         padding: 20px;
         width: 100%;
         background: white;
         color: green;
         border-radius: 5px; }
-        .page-container .wrapper .form input[type="button"]:hover, .page-container .wrapper .form input[type="button"]:active {
+        .page-container .wrapper .form input[type="submit"]:hover, .page-container .wrapper .form input[type="submit"]:active, .page-container .wrapper .form input[type="button"]:hover, .page-container .wrapper .form input[type="button"]:active {
           background: green;
           color: white; }
-        .page-container .wrapper .form input[type="button"]:focus {
+        .page-container .wrapper .form input[type="submit"]:focus, .page-container .wrapper .form input[type="button"]:focus {
           outline: none;
           border-color: #333; }
     .page-container .wrapper .hero {
