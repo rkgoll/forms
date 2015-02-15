@@ -236,7 +236,7 @@ th {
   padding: 0; }
 
 body {
-  font-family: arial, helvetica, sans-serif; }
+  font-family: helvetica, arial, sans-serif; }
 
 .page-container {
   position: relative;
@@ -317,9 +317,29 @@ body {
         border-radius: 9px; }
     .page-container .wrapper .page .form {
       margin: 50px auto;
-      background: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.7);
       padding: 50px;
       border: 1px solid #ccc; }
+    .page-container .wrapper .page ul {
+      color: white;
+      text-align: center;
+      font-size: 20px;
+      line-height: 40px;
+      margin-top: 50px; }
+      .page-container .wrapper .page ul li {
+        font-weight: 100; }
+        .page-container .wrapper .page ul li strong {
+          font-size: 30px;
+          line-height: 50px; }
+
+ul.info {
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 50px;
+  border: 1px solid #ccc;
+  max-width: 500px; }
+  ul.info li {
+    padding: 15px; }
 
 header {
   position: relative;

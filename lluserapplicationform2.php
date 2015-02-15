@@ -1,10 +1,12 @@
 ---
 layout: default
 ---
-<div class="page-container">
-  
-  {% include header.html %}
 
+<html>
+<head>
+	<title>LendLift Demo</title>
+</head>
+<body>
 <?php 
 	$myfirstname = $_POST["firstname"];
 	$mylastname = $_POST["lastname"]; 
@@ -19,16 +21,16 @@ layout: default
 	$mycreditscore = $_POST["creditscore"];
 	$myLLCompBand = 0;
 
-	echo "<ul class='info'><li><strong>Name: </strong>$myfirstname $mylastname</li>";
-	echo "<li><strong>Email: </strong>$myemailaddress</li>";
-	echo "<li><strong>ZIP Code: </strong>$myzipcode</li>";
-	echo "<li><strong>SSN: </strong>$myssn</li>";
-	echo "<li><strong>Loan Amount: </strong>$myloanamt</li>";
-	echo "<li><strong>Current Payments: </strong>$mycurrentMinPayment</li>";
-	echo "<li><strong>Current APR: </strong>$mycurrentAPR</li>";
-	echo "<li><strong>Preferred Minimum Payment: </strong>$myprefminpayment</li>";
-	echo "<li><strong>Preferred Loadn Duration: </strong> $myprefloanduration</li>";
-	echo "<li><strong>Credit Score: </strong>$mycreditscore</li></ul>";
+	echo "$myfirstname $mylastname<BR>";
+	echo "$myemailaddress <BR>";
+	echo "$myzipcode <BR>";
+	echo "$myssn <BR>";
+	echo "$myloanamt <BR>";
+	echo "$mycurrentMinPayment <BR>";
+	echo "$mycurrentAPR <BR>";
+	echo "$myprefminpayment <BR>";
+	echo "$myprefloanduration <BR>";
+	echo "$mycreditscore <BR>";
 
 // Implies that the credit score is less than 600 - which does not qualify for a loan.
 if ($mycreditscore =="5")	
@@ -56,18 +58,19 @@ else
 	//$myloanamt = 5000;
 	//$myadjustcreditscore = 740;
 
-
-	echo "<ul class='info'><li><strong>Revolving Line Util: </strong>$revolving_line_util %</li>";
-	echo "<li><strong>Inquiries in 6 months: </strong>$inquiries_sixmonths</li>";
-	echo "<li><strong>Months since delinq: </strong>$months_since_delinq</li>";
+	echo "Revolving Line Util: ";
+	echo "$revolving_line_util %";
+	echo "<BR>";
+	echo "Inquiries in 6 months: ";
+	echo "$inquiries_sixmonths";
+	echo "<BR>";
+	echo "Months since delinq: ";
+	echo "$months_since_delinq";
+	echo "<BR>";
 
 	// Print the adjusted credit score based on the range
-	echo "<li><strong>My adjust credit score: </strong>$myadjustcreditscore</li></ul>";
-
-
-	
-
-
+	print("My adjust credit score is: ");
+	echo "$myadjustcreditscore <BR>";
 
 
 	if (($myadjustcreditscore < 600) || ($inquiries_sixmonths > 4) || ($months_since_delinq > 3) || ($revolving_line_util > 40))
@@ -91,22 +94,22 @@ else
 		else
 			$myfinaldelinqs = 2.7110215433137 * log($months_since_delinq);
 
-
-
-		echo "<ul class='info'><li><strong>Coefficient: </strong>$mycoefficient</li>";
-		echo "<li><strong>Adjusted loan amount: </strong>$myadjustedloanamount</li>";
-		echo "<li><strong>Credit Score: </strong>$myfinalcreditscore</li>";
-		echo "<li><strong>Final Revolving: </strong>$myfinalrevolveutil</li>";
-		echo "<li><strong>Inquiries: </strong>$myfinalinquiries</li>";
-		echo "<li><strong>Delinquent: </strong>$myfinaldelinqs</li>";
+		echo "$mycoefficient <BR>";
+		echo "$myadjustedloanamount <BR>";
+		echo "$myfinalcreditscore <BR>";
+		echo "$myfinalrevolveutil <BR>";
+		echo "$myfinalinquiries <BR>";
+		echo "$myfinaldelinqs <BR>";
 
 		$mycalculate_compgradescore = $mycoefficient + $myadjustedloanamount + $myfinalcreditscore + $myfinalrevolveutil + $myfinalinquiries + $myfinaldelinqs;
 
-		echo "<li><strong>Calculated Comp Grade Score: </strong>$mycalculate_compgradescore</li>";
+		echo "My Calculated Comp Grade Score is : ";
+		echo "$mycalculate_compgradescore <BR>";
 
 		$mycalculatedband = abs(round(($mycalculate_compgradescore/350), 0) - 2);
 
-		echo "<li><strong>Calculated Comp Band: </strong>$mycalculatedband</li></ul>";
+		echo "My Calculated Comp Band is : ";
+		echo "$mycalculatedband <BR>";
 
 		// Open the database and do a quick look up based on the loan amount
 		// and credit score.
@@ -166,5 +169,5 @@ else
 }
 
 ?>
-
-</div>
+</body>
+</html>

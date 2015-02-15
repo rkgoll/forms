@@ -1,4 +1,26 @@
+<!DOCTYPE html>
 <html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>LendLift</title>
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="assets/css/main.css"> 
+  <link rel="canonical" href="http://www.lendlift.com/lluserapplicationform2.php">
+  <link rel="alternate" type="application/rss+xml" title="LendLift" href="http://www.lendlift.com/feed.xml" />
+
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  
+</head>
+
+
+  <body>
+
+  <html>
 <head>
 	<title>LendLift Demo</title>
 </head>
@@ -166,4 +188,9 @@ else
 
 ?>
 </body>
+</html>
+
+
+  </body>
+
 </html>
