@@ -9,7 +9,7 @@ layout: default
   
   <div class="wrapper">
     
-    <form method="post" action="lluserapplicationform.php">
+    <form method="post" action="lluserapplicationform.php" onsubmit="return window.confirm('You are submitting information to an external page.\nAre you sure?');">
     <section>
       
       <div class="hero">
@@ -34,17 +34,17 @@ layout: default
     <section>
       <div class="hero">
         <div class="form">
-          <ul>
-            <li>Low fixed rates</li>
-            <li>Fast approval</li>
-            <li>No hidden fees</li>
-            <li><strong>Your debt free life awaits!</strong></li> 
-          </ul>
           <span><input name="firstname" type="text"><label>First Name</label></span>
           <span><input name="lastname" type="text"><label>Last Name</label></span>
           <span><input name="emailaddress" type="text"><label>Email</label></span>
           <span><input name="zipcode" type="text"><label>ZIP Code</label></span>
-          <span><input type="button" value="Continue" id="btn_continue"></span>
+          <span><input name="ssn" type="text"><label>Social Security Number</label></span>
+          <span><input name="loanamt" type="text"><label>Loan Amount</label></span>
+          <span><input name="currentMinPayment" type="text"><label>Current Minimum Payment</label></span>
+          <span><input name="prefminpayment" type="text"><label>Preferred Minimum Payment</label></span>
+          <span><input name="prefloanduration" type="text"><label>Preferred Load Duration</label></span>
+          <span><input name="creditscore" type="text"><label>Credit Score</label></span>
+          <span><input type="submit" value="Submit" id="btn_submit"></span>
         </div>
       </div>
     </section>
