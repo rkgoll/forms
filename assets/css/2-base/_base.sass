@@ -1,19 +1,19 @@
 .page-container
   position: relative
   overflow: hidden
-
+  background: url(../img/lift.jpeg) bottom center
+  background-size: cover
   .wrapper
     position: relative
     top: 0
     left: 0
-    background: #ccc
     width: 200%
     +clearfix
     +transition
 
     section
       width: 50%
-      float: left
+      float: left 
     .form
       max-width: 500px
       span
@@ -74,3 +74,11 @@
         border: 1px solid #ccc
         padding: 50px
         border-radius: 9px
+
+    .page
+      .form
+        margin: 50px auto
+        background: rgba(255,255,255,0.5)
+        padding: 50px
+        border: 1px solid #ccc
+
