@@ -160,7 +160,20 @@
           <span><input name="zipcode" type="text"><label>ZIP Code</label></span>
           <span><input name="ssn" type="text"><label>Social Security Number</label></span>
           <span><input name="loanamt" type="text"><label>Loan Amount</label></span>
-          <span><input name="creditscore" type="text"><label>Credit Score</label></span>
+          <span>
+            <select name="creditscore" style="margin-top:20px;"> 
+            <option value="" selected>Select a range</option>
+            <option value="1">Greater than 700</option>
+            <option value="2">660 - 700</option>
+            <option value="3">630 - 660</option>
+            <option value="4">600 - 630</option>
+            <option value="5">Less than 600 </option>
+            <option value="0">Don't know</option>
+
+            </select>
+
+            <label>Credit Score Range</label>
+          </span>
          
           <span><input name="currentMinPayment" type="text"><label>Current Minimum Payment (Optional)</label></span>
           <span><input name="prefminpayment" type="text"><label>Preferred Minimum Payment (Optional)</label></span>
