@@ -9,7 +9,7 @@ layout: default
   
   <div class="wrapper">
     
-    <form method="post" action="lluserapplicationform.php" onsubmit="return window.confirm('You are submitting information to an external page.\nAre you sure?');">
+    <form method="post" action="lluserapplicationform.php" onsubmit="return window.confirm('By selecting OK: I have reviewed and consent to the Credit Authorization. I agree to the Terms &amp; Conditions. I agree to the Privacy Statement.');">
     <section>
       
       <div class="page">
@@ -39,10 +39,12 @@ layout: default
           <span><input name="ssn" type="text"><label>Social Security Number</label></span>
           <span><input name="loanamt" type="text"><label>Loan Amount</label></span>
           <span><input name="creditscore" type="text"><label>Credit Score</label></span>
-          <hr style="height: 1px; border: none; border-top: dotted 1px green;  margin-top: 50px;">
+         
           <span><input name="currentMinPayment" type="text"><label>Current Minimum Payment (Optional)</label></span>
           <span><input name="prefminpayment" type="text"><label>Preferred Minimum Payment (Optional)</label></span>
           <span><input name="prefloanduration" type="text"><label>Preferred Loan Duration (Optional)</label></span>
+
+          <span><input type="checkbox"><label style="color: black; text-transform: none; ">I have reviewed and consent to the Credit Authorization. I agree to the Terms &amp; Conditions. I agree to the Privacy Statement.</label></span>
           
           <span><input type="submit" value="Submit" id="btn_submit"></span>
         </div>

@@ -27,8 +27,8 @@ layout: default
 	echo "<li><strong>Current Payments: </strong>$mycurrentMinPayment</li>";
 	echo "<li><strong>Current APR: </strong>$mycurrentAPR</li>";
 	echo "<li><strong>Preferred Minimum Payment: </strong>$myprefminpayment</li>";
-	echo "<li><strong>Preferred Loadn Duration: </strong> $myprefloanduration</li>";
-	echo "<li><strong>Credit Score: </strong>$mycreditscore</li></ul>";
+	echo "<li><strong>Preferred Loan Duration: </strong> $myprefloanduration</li>";
+	echo "<li><strong>Credit Score Range: </strong>$mycreditscore</li></ul>";
 
 // Implies that the credit score is less than 600 - which does not qualify for a loan.
 if ($mycreditscore =="5")	
@@ -62,7 +62,7 @@ else
 	echo "<li><strong>Months since delinq: </strong>$months_since_delinq</li>";
 
 	// Print the adjusted credit score based on the range
-	echo "<li><strong>My adjust credit score: </strong>$myadjustcreditscore</li></ul>";
+	echo "<li><strong>Credit score: </strong>$myadjustcreditscore</li></ul>";
 
 
 	
