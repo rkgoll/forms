@@ -1,6 +1,6 @@
 .page-container
-  position: relative
-  overflow: hidden
+  position: relative;
+  overflow: hidden;
   background: url(../img/lift.jpeg) bottom center
   background-size: cover
   .wrapper
@@ -26,6 +26,7 @@
           font-size: 15px
           padding: 10px 0
           color: green
+          border-radius: 0
 
           &:focus
             outline: none
@@ -102,3 +103,26 @@ ul.info
   max-width: 500px
   li
     padding: 15px
+
+input[type="range"]
+  -webkit-appearance: none
+  width: 100%
+  margin: 0
+  background: none
+
+  &::-webkit-slider-runnable-track
+    height: 30px
+    background: green
+    border-radius: 30px
+  &::-webkit-slider-thumb
+    -webkit-appearance: none
+    width: 30px
+    height: 30px
+    background: white
+    border-radius: 50%
+    box-sizing: border-box
+    border: 2px solid green
+    &:hover
+      cursor: pointer
+  &:focus
+    outline: none

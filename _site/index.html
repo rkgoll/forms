@@ -161,7 +161,7 @@
           <span><input name="ssn" type="text"><label>Social Security Number</label></span>
           <span><input name="loanamt" type="text"><label>Loan Amount</label></span>
           <span>
-            <select name="creditscore" style="margin-top:20px;"> 
+            <select name="creditscore" style="margin-top:20px; width: 100%; border: 2px solid green; font-size: 12px; height: 30px; line-height: 30px; display: block;"> 
             <option value="" selected>Select a range</option>
             <option value="1">Greater than 700</option>
             <option value="2">660 - 700</option>
@@ -175,11 +175,19 @@
             <label>Credit Score Range</label>
           </span>
          
-          <span><input name="currentMinPayment" type="range"><label>Current Minimum Payment (Optional)</label></span>
-          <span><input name="prefminpayment" type="text"><label>Preferred Minimum Payment (Optional)</label></span>
-          <span><input name="prefloanduration" type="text"><label>Preferred Loan Duration (Optional)</label></span>
+          <span><input name="currentMinPayment" id="range1" type="range" min="0" max="1000" value="0" oninput="rangevalue1.value=value">$<output id="rangevalue1">0</output>
+          <label>Current Minimum Payment (Optional)</label>
+          </span>
+          <span>
+          <input name="prefminpayment" id="range2" type="range" min="0" max="1000" value="0" oninput="rangevalue2.value=value">$<output id="rangevalue2">0</output>
+          <label>Preferred Minimum Payment (Optional)</label>
+          </span>
+          <span>
+          <input name="prefloanduration" id="range3" type="range" min="0" max="60" value="0" oninput="rangevalue3.value=value"><output id="rangevalue3">0</output> months
+          <label>Preferred Loan Duration (Optional)</label>
+          </span>
 
-          <span><input type="checkbox"><label style="color: black; text-transform: none; ">I have reviewed and consent to the Credit Authorization. I agree to the Terms &amp; Conditions. I agree to the Privacy Statement.</label></span>
+         
           
           <span><input type="submit" value="Submit" id="btn_submit"></span>
         </div>
