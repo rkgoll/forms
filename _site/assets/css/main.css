@@ -45,9 +45,13 @@ table {
  * Copyright 2012-2014 thoughtbot, inc.
  * MIT License */
 html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
   box-sizing: inherit; }
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
@@ -140,6 +144,7 @@ figure {
   margin: 1em 40px; }
 
 hr {
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -199,6 +204,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 input[type=search] {
   -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box; }
 
 input[type=search]::-webkit-search-cancel-button,
@@ -241,6 +248,8 @@ body {
     top: 0;
     left: 0;
     width: 200%;
+    -webkit-transition: all 0.15s ease-out 0s;
+    -moz-transition: all 0.15s ease-out 0s;
     transition: all 0.15s ease-out 0s; }
     .page-container .wrapper:after {
       content: "";
@@ -370,6 +379,8 @@ header {
     opacity: 0.5; }
     header a.logo:hover {
       opacity: 1;
+      -webkit-transition: all 0.15s ease-out 0s;
+      -moz-transition: all 0.15s ease-out 0s;
       transition: all 0.15s ease-out 0s; }
 
 /* Index Page */
