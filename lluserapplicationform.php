@@ -93,7 +93,7 @@ else
 
 
 
-		echo "<ul class='info'><li><strong>Coefficient: </strong>$mycoefficient</li>";
+		echo "<ul class='info' style='display:none;'><li><strong>Coefficient: </strong>$mycoefficient</li>";
 		echo "<li><strong>Adjusted loan amount: </strong>$myadjustedloanamount</li>";
 		echo "<li><strong>Credit Score: </strong>$myfinalcreditscore</li>";
 		echo "<li><strong>Final Revolving: </strong>$myfinalrevolveutil</li>";
