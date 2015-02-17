@@ -137,14 +137,14 @@ else
 
 					while($row = mysql_fetch_array($query_inputresult))
 					{
-						print("<ul class='info'><li>Loan Amount = " .$row['Loan Amount']"</li>");
-						print("<li>Term = " .$row['Term']"months</li>");
-						print("<li>Origination Fees = " .$row['Orig Fee']"</li>");
-						print("<li>Servicing Fees = " .$row['Svc Fee']"</li>");
-						print("<li>New Rate = " .$row['New Rate']"</li>");
-						print("<li>Effective Rate = " .$row['Effective Rate']"</li>");
-						print("<li>Payment = " .$row['Payment']"</li>");
-						print("<li>Reward Redemption Rate = " .$row['Reward Rdmpt']"</li></ul>");
+						print("<ul class='info'><li>Loan Amount = " .$row['Loan Amount']."</li>");
+						print("<li>Term = " .$row['Term']."months</li>");
+						print("<li>Origination Fees = " .$row['Orig Fee']."</li>");
+						print("<li>Servicing Fees = " .$row['Svc Fee']."</li>");
+						print("<li>New Rate = " .$row['New Rate']."</li>");
+						print("<li>Effective Rate = " .$row['Effective Rate']."</li>");
+						print("<li>Payment = " .$row['Payment']."</li>");
+						print("<li>Reward Redemption Rate = " .$row['Reward Rdmpt']."</li></ul>");
 					}
 				}
 			}
