@@ -39,6 +39,8 @@ if ($mycreditscore =="5")
 elseif ($mycreditscore == "0") 
 {
 	echo "<p class='alert'>Sorry, we need to ask you some more questions before we could consider you for a LendLift loan</p>";
+
+
 }
 else
 {
@@ -73,7 +75,6 @@ else
 
 	if (($myadjustcreditscore < 600) || ($inquiries_sixmonths > 4) || ($months_since_delinq > 3) || ($revolving_line_util > 40))
 	{
-
 		echo "<p class='alert'>Sorry, you did not meet our minimum credit requirements for qualifying for a LendLift Loan. <br> Please contact us at contact@lendlift.com if you have more questions.</p>";
 	}
 	else
@@ -136,23 +137,14 @@ else
 
 					while($row = mysql_fetch_array($query_inputresult))
 					{
-						print("Loan Amount = " .$row['Loan Amount']);
-						print ("<BR>");
-						print("Term = " .$row['Term']);
-						print(" months");
-						print ("<BR>");
-						print("Origination Fees = " .$row['Orig Fee']);
-						print ("<BR>");
-						print("Servicing Fees = " .$row['Svc Fee']);
-						print ("<BR>");
-						print("New Rate = " .$row['New Rate']);
-						print ("<BR>");
-						print("Effective Rate = " .$row['Effective Rate']);
-						print ("<BR>");
-						print("Payment = " .$row['Payment']);
-						print ("<BR>");
-						print ("Reward Redemption Rate = " .$row['Reward Rdmpt']);
-						print ("<BR> <BR>");
+						print("<ul><li>Loan Amount = " .$row['Loan Amount']"</li>");
+						print("<li>Term = " .$row['Term']"months</li>");
+						print("<li>Origination Fees = " .$row['Orig Fee']"</li>");
+						print("<li>Servicing Fees = " .$row['Svc Fee']"</li>");
+						print("<li>New Rate = " .$row['New Rate']"</li>");
+						print("<li>Effective Rate = " .$row['Effective Rate']"</li>");
+						print("<li>Payment = " .$row['Payment']"</li>");
+						print ("<li>Reward Redemption Rate = " .$row['Reward Rdmpt']"</li></ul>");
 					}
 				}
 			}
