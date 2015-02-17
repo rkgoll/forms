@@ -198,7 +198,6 @@ else
 						print("<li>Effective Rate = " .$row['Effective Rate']."</li>");
 						print("<li>Payment = " .$row['Payment']."</li>");
 						print("<li>Reward Redemption Rate = " .$row['Reward Rdmpt']."</li></ul>");
-
 					}
 				}
 			}
