@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="https://gwapi.demo.securenet.com/v1/PayOS.js"></script>
+<script>
+    function tokenize() {
+ 
+        //var publicKey = setPublicKey('PUBLIC_KEY_FROM_SECURENET');
+		var publicKey = setPublicKey('0cf7f0a8-2ad1-4d5a-b833-8242a0c25c47');
+        var response = tokenizeCard(
+ 
+            {
+                "publicKey": publicKey,
+                "card": {
+                    "number": document.getElementById('cc_number').value,
+                    "cvv": document.getElementById('cc_cvv').value,
+                    "expirationDate": document.getElementById('cc_expiration').value,
+                    "firstName": document.getElementById('first_name').value,
+                    "lastName": document.getElementById('last_name').value,
+                    "address": {
+                        "zip": document.getElementById('zip').value
+                    }
+                },
+                "addToVault": true,
+                "developerApplication": {
+                    "developerId": 12345678,
+                    "version": '1.2'
+ 
+                }
+            }
+        ).done(function (result) {
+ 
+            var responseObj = $.parseJSON(JSON.stringify(result));
+ 
+            if (responseObj.success) {
+                alert(responseObj.token);
+                // do something with responseObj.token
+            } else {
+                alert("token was not created");
+                // do something with responseObj.message
+ 
+            }
+ 
+        }).fail(function () {
+            alert("error");
+            // an error occurred
+        });
+    }
+</script>
+</head>
+<body>
+<table>
+    <tr>
+       <td>First Name: </td>
+       <td><input id="first_name" type="text"></input></td>
+    </tr>
+    <tr>
+       <td>Last Name: </td>
+       <td><input id="last_name" type="text"></input></td>
+    </tr>
+    <tr>
+       <td>Credit Card Number: </td>
+       <td><input id="cc_number" type="text"></input></td>
+    </tr>
+    <tr>
+       <td>Expiration Date: </td>
+       <td><input id="cc_expiration" type="text"></input></td>
+    </tr>
+    <tr>
+       <td>CVV: </td>
+       <td><input id="cc_cvv" type="text"></input></td>
+    </tr>
+    <tr>
+       <td>Zipcode: </td>
+       <td><input id="zip" type="text"></input></td>
+    </tr>
+    <tr>
+       <td></td>
+       <td><input type="submit" name="Submit" value="Submit" onclick="tokenize()" /></td>
+    </tr>
+</table>
+</body>
+</html>

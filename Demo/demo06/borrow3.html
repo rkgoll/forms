@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>LendLift</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+   <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="assets/img/logo1.png" alt=""></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="/borrow1.html">Borrow</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Dashboard <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/borrow3.html">Loan 1</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role ="button" aria-expaned="true"><span id="username"></span><span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                
+                <li><a id="logout">Logout</a></li>
+              </ul>
+            </li>
+            <li class="active" ><a href="#">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Rewards</h4>
+          </div>
+          <div class="modal-body">
+            <p>We are pleased to have you stay on track on your payments. As our valued borrower,  you could redeem your reward points for the following</p>
+            <div class="btn-group">
+              <label> CashBack worth $17 <input name="options" type="radio">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+              <label> Request Payment Holiday !!<input name="options" type="radio">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+              <label> Merchandise on select partner-Groceries <input name="options" type="radio"></label>
+              <label> Save for another LL Loan for Card-2 <input name="options" type="radio"></label>
+            </div> 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Redeem Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top:10%" role="tabpanel">
+      <div class="container">
+        <div class= "col-lg-2">
+          <ul id="myTab" class="nav nav-pills" role="tablist">
+            <li role="presentation" class="active "><a href="#success1"  aria-controls="success1" role="tab" data-toggle="tab">Loan Details</a></li>
+          <li role="presentation" ><a href="#success2"  aria-controls="success2" role="tab" data-toggle="tab">Payment History</a></li>
+          <li role="presentation"><a href="#success3" aria-controls="success3" role="tab" data-toggle="tab">Make Payment</a></li>  
+          <li role="presentation"><a href="#success4" aria-controls="success4" role="tab" data-toggle="tab">Rewards</a></li>  
+          
+        </ul>
+        </div>  
+          <div class="col-lg-10">
+            <div class="tab-content">
+              <div id="success1" role="tabpanel" class="tab-pane active">
+                 <div class="col-lg-8">
+                    <form class="form-horizontal">
+					  <h2 class="centered"><b> Summary - Loan 1</b></h2>
+                          <div class="form-group">
+                            <label for="loan" class="col-sm-4 ">Loan Amount</label>
+                            <div class="col-sm-3">
+                              <input  type="text" class="form-control" id="loan" readonly>
+                            </div>
+                          </div>
+						   <div class="form-group">
+                            <label for="loan" class="col-sm-4 ">LL RISK</label>
+                            <div class="col-sm-3">
+                              <input  type="text" class="form-control" value= "4" id="loan" readonly>
+                            </div>
+						 </div>
+                          <div class="form-group">
+                            <label for="loan" class="col-sm-4 ">LL Band</label>
+                            <div class="col-sm-3">
+                              <input  type="text" class="form-control" id="lBand" readonly>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="term" class="col-sm-4 ">Term</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="term" readonly>
+                            </div>
+                            <label for="term" class="col-sm-1 ">Months</label>
+                          </div>
+                          <div class="form-group">
+                            <label for="orgFee" class="col-sm-4 ">Origination Fee</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="oFee" readonly>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="nrate" class="col-sm-4 ">New Rate</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="nRate" readonly>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="erate" class="col-sm-4 ">Effective Rate</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="eRate" readonly>
+                            </div>
+                          </div> 
+                          <div class="form-group">
+                            <label for="payment" class="col-sm-4 ">Payment</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="payment" readonly>
+                            </div>
+                          </div> 
+                          
+                          <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                              <button type="button" class="btn btn-theme btn-default" onClick = "tabmove(1)" >Continue</button>
+                            </div>
+                          </div>
+                    </form>
+                  </div>  
+                
+              </div>
+              <div id="success2" role="tabpanel" class="tab-pane">
+							<h2 class="centered"> <b>Outstanding Balance - Loan 1</b></h2>
+                            <canvas id="payment1" height="400" width="800"></canvas>
+                            <h5 style="centered">Time</h5>
+                            <br>
+                            <script>
+                                var data = {
+                                            labels: ["Apr-15"," May-15","Jun-15","Jul-15","Aug-15","Sep-15","Oct-15","Nov-15","Dec-15","Jan-16","Feb-16"
+                                                      ,"Mar-16","Apr-16","May-16","Jun-16","Jul-16","Aug-16","Sep-16","Oct-16","Nov-16","Dec-16","Jan-17"
+                                                      ,"Feb-17","Mar-17","Apr-17","May-17","Jun-17","Jul-17","Aug-17","Sep-17","Oct-17","Nov-17","Dec-17"
+                                                      ,"Jan-18","Feb-18","Mar-18","Apr-18"],
+                                            datasets: [
+                                                {
+                                                    label: "My First dataset",
+                                                    fillColor: "rgba(151,187,205,0.2)",
+                                                    strokeColor: "rgba(151,187,205,1)",
+                                                    pointColor: "rgba(151,187,205,1)",
+                                                    pointStrokeColor: "#fff",
+                                                    pointHighlightFill: "#fff",
+                                                    pointHighlightStroke: "rgba(151,187,205,1)",
+                                                    data: [8063,7884,7703,7520,7334,7146,6956,6764,6569,6371,6171,5969,5764,5557,5347,5134,4919,4701,4480,4257,4030,3801,3569,3334,3097,2856,2612,2365,2115,1862,1606,1347,1084,818,549,276,0]
+                                                }
+                                            ]
+                                        };
+                                var myLine = new Chart(document.getElementById("payment1").getContext("2d")).Line(data);
+                            </script>
+              </div>
+              
+			  <div id="success3" role="tabpanel" class="tab-pane">
+                <div class="row">
+					   <div class="col-md-4">
+					    <label>Set Up Auto-pay and earn bonus 100 points</label> 
+		                <button type="button" class="btn btn-theme" style="margin-left:0%" onClick = "window.open('/borrowpay.html','_self')">Setup Autopay</button>
+					   </div>
+					</div>
+				 
+				  
+				 <div class="row">
+				   	    <div class="col-md-4" style="margin-left:0%" style="margin-top:10%">
+						  <input value="$279" readonly/>
+						</div>
+				</div>
+				
+				   <div class="row">			
+					  <div class= "col-md-4" "margin-left:0%" style="margin-top:10%"> 
+						<button type="button" class="btn btn-theme btn-small" onClick = "window.open('/borrowpay.html','_self')">Make Payment</button>
+					  </div>
+				  </div>
+                </div>
+             
+
+              <div id="success4" role="tabpanel" class="tab-pane">
+			  	<h2 class="centered"><b> Rewards Summary - Loan 1</b></h2>
+				<p> </p>
+                    <div class="row" >
+                          <label class="col-md-4"> Total Eligible Reward Points Offered </label><input class="col-md-3" value="10,062" readonly>
+                    </div>
+                    <div class="row" >                          
+                          <label class="col-md-4"> Total Rewards earned by Oct 2015</label><input class="col-md-3"  value="1,953" readonly>
+                          <button type="button" class=" btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Redeem rewards
+                          </button>  
+                    </div>
+                    <div class="row" >      
+                          <label class="col-md-4"> Rewards Remaining</label><input class="col-md-3"  value="8,109" readonly>
+                     </div>     
+                      
+                    <div class="container" style="margin-top:5%">
+
+                    <canvas id="rewards1" height="500" width="1000"></canvas>
+                            
+                            <br>
+                            <script>
+                                var data = {
+                                            labels: ["Total Eligible Reward Points Offered","Total Rewards earned by Oct 2015","Rewards Remaining"],
+                                            datasets: [
+                                                {
+                                                    label: "My First dataset",
+                                                    fillColor: "rgba(151,187,205,0.2)",
+                                                    strokeColor: "rgba(151,187,205,1)",
+                                                    data: [10062,1953,8109]
+                                                }
+                                            ]
+                                        };
+                                var myLine = new Chart(document.getElementById("rewards1").getContext("2d")).Bar(data);
+                            </script>
+                    </div>        
+
+                    <div class = "container" style="margin-top:5%">
+                      <canvas id="rewards" height="400" width="800"></canvas>
+                              <p>Loan 1 - Reward Points</p>
+                              <br>
+                              <script>
+                                  var data = {
+                                              labels: ["Apr-15"," May-15","Jun-15","Jul-15","Aug-15","Sep-15","Oct-15","Nov-15","Dec-15","Jan-16","Feb-16"
+                                                        ,"Mar-16","Apr-16","May-16","Jun-16","Jul-16","Aug-16","Sep-16","Oct-16","Nov-16","Dec-16","Jan-17"
+                                                        ,"Feb-17","Mar-17","Apr-17","May-17","Jun-17","Jul-17","Aug-17","Sep-17","Oct-17","Nov-17","Dec-17"
+                                                        ,"Jan-18","Feb-18","Mar-18","Apr-18"],
+                                              datasets: [
+                                                  {
+                                                      label: "My First dataset",
+                                                      fillColor: "rgba(151,187,205,0.2)",
+                                                      strokeColor: "rgba(151,187,205,1)",
+                                                      pointColor: "rgba(151,187,205,1)",
+                                                      pointStrokeColor: "#fff",
+                                                      pointHighlightFill: "#fff",
+                                                      pointHighlightStroke: "rgba(151,187,205,1)",
+                                                      data: [279,558,837,1116,1395,1674,1953,2232,2511,2790,3069,3348,3627,3906,4185,4464,4743,5022,5301,5580,5859,6138,6417,6696,6975,7254,7533,7812,8091,8370,8649,8928,9207,9486,9765,10044,10323]
+                                                  }
+                                              ]
+                                          };
+                                  var myLine = new Chart(document.getElementById("rewards").getContext("2d")).Line(data);
+                              </script>
+                    </div>        
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>      
+
+
+  </body>
+  <script type="text/javascript">
+       $( document ).ready(function() {
+          var name = localStorage.investName;
+          if(name == "notset") {
+            window.open("/index.html","_self");
+          }else {
+            $("#username").text(name);
+              document.getElementById("loan").value =   "$" + localStorage.Loan;
+              document.getElementById("eRate").value =  localStorage.eRate;
+              document.getElementById("oFee").value =   localStorage.oFees;
+              document.getElementById("nRate").value =  localStorage.nRate;
+              document.getElementById("term").value =   localStorage.Term;
+              document.getElementById("payment").value = localStorage.payment;
+              document.getElementById("lBand").value = localStorage.lBand;
+          }
+      });
+
+      $("#logout").click(function(){
+        localStorage.investName = "notset";
+        window.open("/index.html","_self");
+      });
+  </script>

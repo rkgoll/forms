@@ -1,0 +1,12 @@
+Rajesh,
+
+Attached is the cheatsheet for the WorldPay API.  It should have all of your authentication information as well as all the necessary links. If you have any questions, you can email me at jess.hill@securenet.com or reach my cell phone at 512-294-1156.
+
+
+Thanks,
+
+Jess Hill
+
+
+1) Authorization
+2) SecureNet Code

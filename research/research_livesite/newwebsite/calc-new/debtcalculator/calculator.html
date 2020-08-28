@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html ng-app="LendLiftDebtCalc">
+<head>
+    <meta charset="utf-8">
+    <title>LendLift Debt Calculator</title>
+    <script src="js/d3.v3.min.js" charset="utf-8"></script>
+    <script src="js/angular.min.js"></script><!--1.1.4-->
+    <script src="js/mainlib.js"></script>
+    <script src="js/html2canvas.js"></script>
+    <script src="js/angular-slider.js"></script>
+    <link rel="stylesheet" href="css/angular-slider.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/lendlift_fav_ico.png">
+
+
+
+</head>
+<body ng-controller="AppCtrl" ng-init="showEmailForm=false">
+
+<div id="debt-calculator"  style="width:850px; margin:0 auto;">
+	<div id="header">
+		<div id="debt-calculator-title" class="main-title">LendLift Debt Calculator</div>
+		<div id="debt-calculator-logo">
+		<a href="http://www.linkedin.com/company/3173849"><img src="./img/linkedin.jpg"></a>
+		<a href=""><img src="./img/facebook.jpg"></a>
+		<a href=""><img src="./img/twitter.jpg"></a>
+		<a href=""><img src="./img/google+.jpg"></a>
+		<a href=""><img src="./img/pinterest.jpg"></a>
+		
+		
+		<img height=75px src="http://lendlift.com/LendLift_Logo-Version_-2_transparent.png">
+		
+		</div>
+	</div>
+
+    <div id="box-left">
+        <div id="one-left"><div class="section-number">1.</div></div>
+        <div id="one-right">
+
+            <div id="one-title" class="title2">Add Balance</div>
+            <div id="one-first"><input type="text" ng-model="txtBalance" ng-change="txtInputUpdate()" id="txtBalance" placeholder="[$]" value="3500"/><span ng-click="addBalance()" class="arrow-up"></span><span  ng-click="subBalance()"class="arrow-down"></span>&nbsp;<label>Balance</label></div>
+            <div id="one-second"><input type="text" ng-model="txtAPR" ng-change="txtInputUpdate()" id="txtAPR" placeholder="[%]"><span  ng-click="addAPR()" class="arrow-up"></span><span ng-click="subAPR()" class="arrow-down"></span>&nbsp;<label>APR</label></div>
+            <div id="one-third" ><input type="text" ng-model="txtCurrentPayment" ng-change="txtInputUpdate()" id="txtCurrentPayment" placeholder="[$]"><span ng-click="addCurrentPayment()" class="arrow-up"></span><span ng-click="subCurrentPayment()" class="arrow-down"></span>&nbsp;<label>Current Payment</label></div>
+        </div>
+    </div>
+    <div id="box-right">
+        <div id="two-left"><div class="section-number">2.</div></div>
+        <div id="two-right">
+            <div id="two-title" class="title2">Adjust Parameters </div>
+			<div id="two-first">
+                <label>Monthly Payment</label>
+                <slider class="sldrMonthlyPayment" floor="50" ceiling="3500" ng-model-mark1="sliders.minpayment" ng-model-mark2="sliders.currentpayment" step="1" precision="0" ng-model="sliders.payment" ng-onStart="alert('blah')" translate="currencyFormatting"></slider>
+            </div>
+
+
+            <div id="two-second">
+                <label>Payoff Date</label>
+                <slider id="sldrPayoffDate" floor="1" ceiling="60" ng-model-mark1="sliders.minterms" ng-model-mark2="sliders.currentterms" step="1" precision="0" ng-model="sliders.terms"  translate="dateFormatting"></slider>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div id="box-bottom">
+        <div id="three-left"><div class="section-number">3.</div></div>
+        <div id="three-right">
+            <div id="three-title" class="title2">See the Results</div>
+            <div></div>
+            <div id="three-checkboxes">
+                <label style="color: rgb(160, 44, 44)">Minimum</label><input type="checkbox" ng-model="chkMinPay" ng-change="txtInputUpdate()"/>
+                <label style="color: rgb(31, 119, 180)">Current</label><input type="checkbox" ng-model="chkCurPay" ng-change="txtInputUpdate()"/>
+                <label style="color: rgb(44, 160, 44)">Adjusted</label><input type="checkbox" ng-model="chkAdjPay" ng-change="txtInputUpdate()"/>
+            </div>
+
+            <div id="super-graph"></div>
+
+        </div>
+        <div style="text-align: center;">
+            <div style="float:right ;padding-top:10px;padding-bottom: 10px"><input type="button" ng-click="showEmailForm=true" value="Submit These Preferences"></div>
+        </div>
+        <div id="summary-table">
+            <label>Summary Table</label>
+            <div class="black-line-separator"></div>
+            <table width="100%">
+                <tr>
+                <td class="row-header"><label>Options</label></td>
+                <td class="row-header"><label>Balance</label></td>
+                <td class="row-header"><label>APR</label></td>
+                <td class="row-header"><label>Payment</label></td>
+                <td class="row-header"><label>Time to Payoff</label></td>
+                <td class="row-header"><label>Total Payment</label></td>
+                <td class="row-header"><label>Total Savings</label></td>
+                </tr>
+
+
+            <tr ng-repeat="row in rows">
+			
+                    <td class="row-cell {{ row.color }}" style="text-align: left;"><label  class="row-cell {{ row.color }}"> {{ row.label }}</label></td>
+                    <td class="row-cell {{ row.color }}" style="color: {{ row.color }}">{{ row.balance }}</td>
+                    <td class="row-cell {{ row.color }}" style="color: {{ row.color }}">{{ row.apr }}</td>
+                    <td class="row-cell {{ row.color }}" style="color: {{ row.color }}">{{ row.payment }}</td>
+                    <td class="row-cell {{ row.color }}" style="color: {{ row.color }}">{{ row.timetopayoff }}</td>
+                    <td class="row-cell {{ row.color }}" style="color: {{ row.color }}">{{ row.totalpayment }}</td>
+                    <td class="row-cell {{ row.color }}" style="color: {{ row.color }}">{{ row.totalsavings }}</td>
+            </tr>
+
+
+            </table>
+            <div class="black-line-separator"></div>
+        </div>
+
+    </div>
+    <div id="box-details">
+        <div id="detail-minpay-graph"></div>
+        <div id="detail-totalpay-graph"></div>
+        <div id="detail-payoff-graph"></div>
+        <div id="detail-savings-graph"></div>
+    </div>
+    <div id="box-disclosures">
+        <div style="float:left;padding:5px"><b>Disclosures</b>
+        Information and interactive calculators are made available to you as self-help tools for your independent use and are not intended to provide investment advice. We can not and do not guarantee their applicability or accuracy in regard to your individual circumstances. All examples are hypothetical and are for illustrative purposes. We encourage you to seek personalized advice from qualified professionals regarding all personal finance issues.
+        </div>
+        <div style="float:left;padding:5px">
+        <b>Minimum Payment Disclosure</b>
+
+        Our current calculator assumes that your minimum payment remains constant throughout your payoff time-period. This is the optimistic scenario for paying off your debt. In reality your minimum payment reduces as you pay off balances as it is based on a percent of your outstanding balance.This can greatly increase the length of time it takes to pay off your credit cards.
+        </div>
+		<div style="float:left;padding:5px;color:black">
+		LendLift Inc, 8 W 38TH Street Suite 801, New York, NY 10018 contact@lendlift.com © 2013 LendLift Inc.
+		</div>
+    </div>
+
+    <div id="box-email" ng-class="{ 'hidden': ! showEmailForm }">
+        <div id="btn-close-email"><input type="button" ng-click="showEmailForm=false" value="X"></div>
+        <div id="lendliftlogo"><img height=100px src="http://lendlift.com/LendLift_Logo-Version_-2_transparent.png"></div>
+        <div><input type="text" ng-model="txtEmail" placeholder="Email"></div>
+        <div><input type="text" ng-model="txtCreditCardBank" placeholder="Credit Card Bank"/></div>
+        <div><input type="text" ng-model="txtCreditLimit" placeholder="Credit Limit"/></div>
+        <div><input type="text" ng-model="txtCreditScore" placeholder="Credit Score"/></div>
+        <div><input type="button" ng-click="submitCalcData();showEmailForm=false" value="Submit Your Preferences"></div>
+    </div>
+
+
+</div>
+
+
+<p class="error">{{error}}</p>
+
+</body>
+</html>

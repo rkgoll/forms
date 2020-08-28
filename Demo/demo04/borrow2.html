@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>LendLift</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="assets/img/logo1.png" alt=""></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="/borrow1.html">Borrow</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Dashboard <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/borrow3.html">Loan 1</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role ="button" aria-expaned="true"><span id="username"></span><span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                
+                <li><a id="logout">Logout</a></li>
+              </ul>
+            </li>
+            <li class="active" ><a href="#">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:10%" role="tabpanel">
+      <div class="container">
+        <div class= "col-lg-2">
+          <ul id="myTab" class="nav nav-pills" role="tablist">
+          <li role="presentation" class="active "><a href="#success1"  aria-controls="success1" role="tab" data-toggle="tab">Loan Details</a></li>
+          <li role="presentation"><a href="#success2" aria-controls="success2" role="tab" data-toggle="tab">Pricing</a></li>  
+          <li role="presentation"><a href="#success3" aria-controls="success3" role="tab" data-toggle="tab">Rewards</a></li>  
+          <li role="presentation"><a href="#success4" aria-controls="success4" role="tab" data-toggle="tab">Summary</a></li>  
+          <li role="presentation"><a href="#success5" aria-controls="success5" role="tab" data-toggle="tab">Disbursment</a></li>  
+        </ul>
+        </div>  
+          <div class="col-lg-6">
+            <div class="tab-content">
+              <div id="success1" role="tabpanel" class="tab-pane active">
+                <h3 id="name" class="centered" > Congratulations </h3>
+                
+                    
+                    <form class="form-horizontal">
+                          <div class="form-group">
+                            <label for="loan" class="col-sm-4 ">Loan Amount</label>
+                            <div class="col-sm-3">
+                              <input  type="text" class="form-control" id="loan" readonly>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="term" class="col-sm-4 ">Term</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="term" readonly>
+                            </div>
+                            <label for="term" class="col-sm-1 ">Months</label>
+                          </div>
+                          <div class="form-group">
+                            <label for="orgFee" class="col-sm-4 ">Origination Fee</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="oFee" readonly>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="nrate" class="col-sm-4 ">New Rate</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="nRate" readonly>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="erate" class="col-sm-4 ">Effective Rate</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="eRate" readonly>
+                            </div>
+                          </div> 
+                          <div class="form-group">
+                            <label for="payment" class="col-sm-4 ">Payment</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="payment" readonly>
+                            </div>
+                          </div> 
+                          
+                          <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                              <button type="button" class="btn btn-theme btn-default" onClick = "tabmove(1)" >Continue</button>
+                            </div>
+                          </div>
+                    </form>
+                
+              </div>
+              <div id="success2" role="tabpanel" class="tab-pane">
+                
+                
+                    <h3 class="centered">Here's some more information on pricing.</h3>
+                    <form class="form-horizontal">
+                          <div class="form-group">
+                            <label for="loan" class="col-sm-5 ">Base Rate</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="bRate" readonly>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="term" class="col-sm-5 ">Adj for RIsk/Volatility</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="adjR" readonly>
+                            </div>
+                            
+                          </div>
+                          <div class="form-group">
+                            <label for="orgFee" class="col-sm-5 ">Unsuccessful  Fee</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="uFees" readonly>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="nrate" class="col-sm-5 ">Late</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="lFees" readonly>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="erate" class="col-sm-5 ">Check Processing Fee</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="cpf" readonly>
+                            </div>
+                          </div> 
+                          <div class="form-group">
+                            <label for="payment" class="col-sm-5 ">Collection-60dpd</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="col60" readonly>
+                            </div>
+                          </div> 
+                          <div class="form-group">
+                            <label for="payment" class="col-sm-5 ">Processing Fee</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id ="pFees" readonly>
+                            </div>
+                          </div> 
+                          
+                          <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-10">
+                              <button type="button" class="btn btn-theme btn-default" onClick = "tabmove(2)">Continue</button>
+                            </div>
+                          </div>
+                    </form>
+                
+              </div>  
+              <div id="success3" role="tabpanel" class="tab-pane">       
+                    <h3 > As Our promise to help you stay on top of your payments,you have been selected for a reward offer</h3>
+                    <h4 >1.Earn Reward Points for each dollar you payoff</h4>
+                    <h4 >2.Redeem your points to request cash back,payment holidays or APR reduction</h4>
+                    <form class="form-horizontal">
+                          <div class="form-group">
+                            <label for="loan" class="col-sm-4 ">Reward Points</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="reward" readonly>
+                            </div>
+                          </div>
+                          
+                          <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                              <button type="button" class="btn btn-theme btn-default" onClick = "tabmove(3)">Continue</button>
+                            </div>
+                          </div>
+                    </form>
+                
+              </div>
+              <div id="success4" role="tabpanel" class="tab-pane">
+                
+                  
+                    <h3 class="centered">Summary</h3>
+                    
+                    
+                    <form class="form-horizontal">
+                          <div class="form-group">
+                            <label for="loan" class="col-sm-6 ">Increase/Decrease in Min Pay</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control"  value ="$54"id="loan" readonly>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="loan" class="col-sm-6 ">% Increase/Decrease</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" value="19%" id="loan" readonly>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="loan" class="col-sm-6 ">Total Payments on CC(approx)</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" value="$12,991" id="loan" readonly>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="loan" class="col-sm-6 ">Total Payments on Payoff LL Loan</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" value="10,062" id="loan" readonly>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="loan" class="col-sm-6 ">Total Savings</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" value="$2930" id="loan" readonly>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="loan" class="col-sm-6">Percentage Savings</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" value="23%" id="loan" readonly>
+                            </div>
+                          </div>
+
+                          <label>I Agree to <a  onclick="window.open('terms2.html', 'newwindow','width=400, height=500')">Terms and conditions </a><input id="condition" type="checkbox" onClick="check()"></label>
+                         
+                            <div class="col-sm-offset-3 col-sm-10">
+                              <button id="apply" type="button" class="btn btn-theme btn-large" onClick = "tabmove(4)" disabled>Avail Loan</button>
+                            </div>
+                         
+                    </form>
+                
+              </div>
+              <div id="success5" role="tabpanel" class="tab-pane">
+                
+                
+                    <h3 class="centered"> Disbursement</h3>
+                    
+                    <form class="form-horizontal">
+                          <div class="form-group">
+                            <label for="loan" class="col-sm-4 ">Routing Number</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="loan" >
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="loan" class="col-sm-4 ">Account</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="loan" >
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="loan" class="col-sm-4 ">Bank Name</label>
+                            <div class="col-sm-3">
+                              <input type="text" class="form-control" id="loan" >
+                            </div>
+                          </div>
+                          
+                          <label>I authorize to <a onclick="window.open('ach.html', 'newwindow','width=400, height=500')"> ACH Debits Agreement </a><input id="condition" type="checkbox" onClick="check()"></label>
+              
+
+                          <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                              <button type="button" class="btn btn-theme btn-large" onClick = "congratulations.html">Transfer fund</button>
+                            </div>
+                          </div>
+                           <div id = "alert-placeholder1"></div>
+                          
+                    </form>
+                
+          
+              </div>
+            </div>  
+          </div>    
+      </div>
+      <script>
+
+          $("#logout").click(function(){
+            localStorage.investName = "notset";
+            window.open("/index.html","_self");
+          });
+
+          $( document ).ready(function() {
+             $("#condition").checked = false;
+            var name = localStorage.investName;
+              if(name == "notset") {
+                window.open("/index.html","_self");
+              }else {
+               $("#username").text(name);
+
+
+              document.getElementById("name").innerHTML = "Congratulations " + localStorage.name1;
+              document.getElementById("loan").value =   localStorage.Loan;
+              document.getElementById("eRate").value =  localStorage.eRate;
+              document.getElementById("oFee").value =   localStorage.oFees;
+              document.getElementById("nRate").value =  localStorage.nRate;
+              document.getElementById("term").value =   localStorage.Term;
+              document.getElementById("reward").value = localStorage.reward;
+              document.getElementById("payment").value = localStorage.payment;
+              document.getElementById("bRate").value = localStorage.bRate;
+              document.getElementById("adjR").value = localStorage.adjR;
+              document.getElementById("lFees").value = localStorage.lFees;
+              document.getElementById("uFees").value = localStorage.uFees;
+              document.getElementById("cpf").value = localStorage.cpf;
+              document.getElementById("col60").value = localStorage.col60;
+              document.getElementById("pFees").value = localStorage.pFees;
+
+            }
+              
+          });
+          
+          function tabmove(id) {
+            switch(id) {
+               case 1: $('#myTab li:eq(1) a').tab('show')
+                        break;
+               case 2: $('#myTab li:eq(2) a').tab('show');
+                        break;
+               case 3: $('#myTab li:eq(3) a').tab('show');
+                        break;
+               case 4: $('#myTab li:eq(4) a').tab('show');
+                        break;
+               case 5: $('#alert-placeholder1').html(" Congratulations ! Your Loan Amount is on its way to your account ! <br>Welcome to LendLift Dashboard !");
+                        setTimeout(function() {
+                            window.open("/borrow3.html","_self");
+                        }, 2000);
+                        break;                        
+            }
+             
+          }
+
+          function check() {
+            var status = $("#condition").is(":checked");
+            if(status == true)
+            $('#apply').attr('disabled',false);
+            else $('#apply').attr('disabled',true);
+          }
+
+        bootstrap_alert = function() {}
+        bootstrap_alert.warning = function(message) {
+            $('#alert_placeholder').html('<div class="alert"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>')
+        }
+
+        $('#invest').on('click', function() {
+        
+            bootstrap_alert.warning('Your request for the loan will be processed');
+            $('#dashboard').show();
+            
+        });
+
+       
+      </script>
+</body>

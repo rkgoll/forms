@@ -1,0 +1,354 @@
+
+
+.btn, .btn:hover, .btn:focus, .btn:active, .btn.active, .btn.disabled, .btn[disabled]
+{
+    color: rgb(51, 51, 51);
+    background: rgb(10, 148, 68);
+    color:white;
+    text-shadow:none;
+    border-style:none;
+    font-family: "Tahoma";
+    border-radius: 0;
+}
+
+.hero-unit
+{
+
+    background: url('../img/bg.png') repeat;
+    background-size:100% 100%;
+    border-radius: 0;
+    text-align: center;
+}
+
+.hero-unit object, .hero-unit embed
+{
+    margin-top:40px;
+}
+
+div#blog, div#debtcalculator
+{
+    padding-top:60px;
+}
+
+
+.logo
+{
+    height:100px;
+    float:left;
+    padding: 10px 10px 10px 10px;
+
+
+}
+
+div.hero-unit h1
+{
+    text-shadow: 1px 1px rgb(16,186,0);
+    color:#fff;
+}
+
+div.hero-unit p:nth-of-type(1)
+{
+    text-shadow: 1px 1px #fff;
+    background: rgb(216,216,216);
+    border-radius: 6px 6px 6px 6px;
+    padding: 5px 5px 5px 5px;
+
+}
+
+body
+{
+    background:rgb(246, 246, 246);
+}
+
+.navbar-inverse .nav > li > a
+{
+    color:#fff;
+
+}
+
+.nav
+{
+
+
+}
+.nav-collapse
+{
+    margin-top:40px;
+    padding-left:140px;
+}
+.navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus
+{
+    background-color: rgb(10, 148, 68);
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.450) inset;
+
+}
+
+.navbar-inverse .nav li  > a, .navbar-inverse .nav  li > a:hover, .navbar-inverse .nav li > a:focus
+{
+    background-color: rgb(111, 188, 63);
+
+
+}
+
+.navbar-form p
+{
+    color:red;
+    font-weight: bold;
+    text-align: right;
+}
+
+.navbar-inverse .navbar-inner
+{
+    background-color: rgb(246, 246, 246);
+    background-image: none;
+
+
+}
+
+.navTab
+{
+    background-color: rgb(111, 188, 63);
+}
+
+.container-fluid
+{
+    margin-top:61px;
+    padding-left:0px;
+    padding-right:0px;
+
+}
+
+div#signup .row
+{
+    margin-top:100px;
+    width: 950px ;
+    margin-left: auto ;
+    margin-right: auto ;
+
+}
+
+div#signup .span4
+{
+    margin-left:100px;
+    padding:3px;
+    height:640px;
+    width:275px;
+}
+
+div#signup .span4:nth-of-type(1)
+{
+    border:2px solid rgb(111, 188, 63);
+
+}
+div#signup .span4:nth-of-type(2)
+{
+    border:2px solid   rgb(10, 148, 68);
+}
+
+div#signup .span4:nth-of-type(1) h2
+{
+    background-color:rgb(111, 188, 63);
+    color:white;
+    padding-left:10px;
+}
+
+
+div#signup .span4:nth-of-type(2) h2
+{
+    background-color: rgb(10, 148, 68);
+    color:white;
+    padding-left:10px;
+}
+
+
+
+div#home .row
+{
+
+    width:980px;
+    margin: 0 auto;
+    color: rgb(100,100,100);
+
+}
+
+div#home .row .span4
+{
+    width:290px;
+    clear:right;
+
+}
+
+.tab-content
+{
+    overflow:visible;
+}
+
+div#contact
+{
+    margin-top:71px;
+    width:300px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+input#fieldformBuilderFieldName,
+input#fieldformBuilderFieldEmail,
+input#fieldformBuilderFieldEmail,
+input#fieldformBuilderFieldFirst_Name,
+input#fieldformBuilderFieldLast_Name,
+input#fieldformBuilderFieldAddress,
+input#fieldformBuilderFieldZip_Code
+
+{
+    width:210px;
+}
+
+p
+{
+    width:100%;
+    line-height:19px;
+}
+
+div#blog
+{
+    width:800px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+img.linkedin
+{
+    width:24px;
+    height:24px;
+    background:url('../img/original.png') -480px -572px;
+    border:black solid 0px;
+    padding:0 0 0 0;
+
+}
+img.facebook
+{
+    width:24px;
+    height:24px;
+    background:url('../img/original.png') -200px -572px;
+    border:black solid 0px;
+    padding:0 0 0 0;
+}
+img.pinterest
+{
+    width:0;
+    height:0;
+    background:url('../img/original.png') -480px -572px;
+    border:black solid 0px;
+    padding:0 0 0 0;
+}
+img.google
+{
+    width:24px;
+    height:24px;
+    background:url('../img/original.png') -480px -484px;
+    border:black solid 0px;
+    padding:0 0 0 0;
+}
+img.twitter
+{
+    width:24px;
+    height:24px;
+    background:url('../img/original.png') -430px -484px;
+    border:black solid 0px;
+    padding:0 0 0 0;
+}
+
+
+
+.navbar-form img
+{
+    margin-top:5px;
+    vertical-align:middle;
+}
+
+footer p
+{
+    margin-left:auto;
+    margin-right:auto;
+    width:750px;
+    color:   #a1a1a1;
+    font-size:9px;
+
+}
+
+
+/* Carousel base class */
+.carousel {
+    margin-bottom: 20px;
+}
+
+.carousel .container {
+    position: relative;
+    z-index: 9;
+}
+
+.carousel-control {
+    height: 80px;
+    margin-top:45px;
+    font-size: 160px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    background-color: transparent;
+    border: 0;
+    z-index: 10;
+}
+
+.carousel .item {
+    height: 600px;
+}
+.carousel img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    min-width: 100%;
+    height: 600px;
+}
+
+.carousel-caption {
+    background-color: transparent;
+    position: static;
+    max-width: 950px;
+    padding: 0 auto;
+    margin-top: 270px;
+    margin-left: auto;
+    margin-right:auto;
+    text-align: center;
+}
+.carousel-caption h1,
+.carousel-caption .lead {
+    margin: 0;
+    line-height: 1.25;
+    color: rgb(254,241,1);
+    text-shadow: 0 5px 10px rgba(0,0,0,.4);
+    font-size:40px;
+    font-weight:bold;
+
+}
+.carousel-caption .btn {
+    margin-top: 10px;
+}
+
+iframe
+{
+    margin-top:-105px;
+}
+
+p.lead2
+{
+    margin: 0;
+    line-height: 1.25;
+    color: rgb(254,241,1);
+    text-shadow: 0 5px 10px rgba(0,0,0,.4);
+    font-size:42px;
+    font-weight:bold;
+}
+
+p.lead2:nth-of-type(1)
+{
+    margin-top:-130px;
+    margin-bottom:270px;
+}

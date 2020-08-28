@@ -1,0 +1,368 @@
+body {
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+}
+
+.styleGreen
+{
+	inheritance:no;
+	color : rgb(44, 160, 44);
+}
+.styleRed
+{
+	color : rgb(160, 44, 44);
+}
+.styleBlue
+{
+	color : rgb(31, 119, 180);
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.x.axis path {
+    /*display: none;*/
+}
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
+#super-graph
+{
+    font: 10px sans-serif;
+}
+
+.main-title
+{
+    font-size: 36px;
+    color: #39B54A;
+}
+
+
+.title2
+{
+    font-size: 24px;
+    color: #39B54A;
+}
+
+.section-number
+{
+    font-size: 36px;
+    color: #39B54A;
+    margin: 0px 5px;
+}
+
+#debt-calculator #box-left,#box-right,#box-bottom
+{
+    color: #39B54A;
+    border: 1px;
+    background:#f1f2f2;
+}
+
+#debt-calculator label
+{
+    font-size: 14px;
+    color: #414042;
+}
+
+#box-left
+{
+    margin: 5px 5px;
+    float: left;
+    width: 400px;
+    height: 200px;
+}
+
+#box-right
+{
+   margin: 5px 5px;
+   float: left;
+   width: 400px;
+   height: 200px;
+}
+
+#box-bottom
+{
+    margin: 5px 5px;
+    clear:both;
+    width: 810px;
+    height: 330px;
+}
+
+
+#one-left,#two-left
+{
+    float: left;
+    width: 15%;
+    height: 100%;
+
+}
+#three-left
+ {
+     float: left;
+     width: 5%;
+     height: 100%;
+
+ }
+
+#four-span
+{
+    float: left;
+    width: 5%;
+    height: 100%;
+
+}
+#one-right,#two-right
+{
+    float: left;
+    width: 85%;
+    height: 100%;
+
+}
+
+#three-right
+{
+    float: left;
+    width: 95%;
+    height: 100%;
+}
+
+#summary-table
+ {
+     float: left;
+     clear:both;
+    width:100% ;
+    background: #f1f2f2;
+ }
+
+#box-details
+ {
+     float: left;
+ }
+#box-disclosures
+{
+    float: left;
+    font: 10px sans-serif;
+    color:   #a1a1a1;
+    width:96%;
+    padding-top: 10px;
+}
+#one-right label
+{
+    padding: 15px;
+}
+#one-title, #two-title
+{
+    height:15%;
+    margin: 5px;
+
+}
+
+
+#one-first
+{
+    height:15%;
+    clear:both;
+    padding:10px;
+}
+#one-second,#one-third
+{
+    height:15%;
+    clear:both;
+    padding:10px;
+}
+
+#three-title
+{
+    float: left;
+    width:40%;
+    height:7%;
+
+}
+
+#three-checkboxes
+{
+    float: left;
+    width: 40%;
+    height:7%;
+    text-align: right;
+}
+
+input[type='text']
+{
+    border: 1px solid #ccc;
+    padding: 5px;
+    white-space: pre;
+    text-align: center;
+}
+
+#two-first,#two-second
+{
+    height:30%;
+    clear:both;
+    padding:10px;
+}
+
+#two-first-overlay
+{
+    position:absolute;
+    background-color: #ff0;
+    top:0;
+    left:0;
+}
+
+slider span.pointer.active:after
+{
+    background-color: #39B54A;
+}
+
+slider span.pointer
+{
+    width: 5px;
+}
+
+slider span.pointer:after
+{
+    width: 5px;
+    left:0px;
+    visibility: hidden;
+
+}
+
+.black-line-separator
+{
+    border-bottom:solid black 2px;
+}
+
+.row-header
+{
+
+
+}
+.row-cell
+{
+    font-size: 14px;
+    text-align: center;
+
+}
+
+.arrow-up {
+    margin-top:7px;
+    margin-left:2px;
+    margin-right:2px;
+    width: 0px;
+    height: 0px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid black;
+
+
+    position:absolute;
+
+
+}
+
+.arrow-down {
+    margin-top:20px;
+    margin-left:2px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid black;
+
+    position:absolute;
+
+
+}
+
+#box-email.hidden
+{
+    visibility: hidden;
+}
+
+#box-email
+{
+    position:absolute;
+    margin:auto;
+
+    width: 300px ;
+    height: 400px ;
+    background: #39D54A;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    border: 4px solid #39B54A;
+    visibility: visible;
+}
+#box-email div
+ {
+     padding:10px;
+     text-align: center;
+
+ }
+
+#box-email input
+{
+
+    width: 200px;
+
+}
+
+#btn-close-email
+{
+    margin-left: 85%;
+    float:right;
+    position:absolute;
+}
+#btn-close-email input
+{
+    width: 30px;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #585656;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #585656;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #585656;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #585656;
+}
+#header
+{
+float: left;
+width:100%;
+}
+
+#debt-calculator-logo
+{
+	float: right;
+	margin-right: 4%;
+
+}
+#debt-calculator-logo img
+{
+	vertical-align:top;
+	padding-top:0px;
+	border:0px;
+}
+
+#debt-calculator-title
+{
+	float: left;
+	margin-top:1%;
+
+}
+

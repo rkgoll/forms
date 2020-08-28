@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>LendLift</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script src ="assets/js/bootstrap.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="assets/img/logo1.png" alt=""></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#contact">Invest</a></li>
+            <li class="active"><a href="#contact">Borrow</a></li>
+            <li class="active"><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div><!--nav fixed top collapes-->
+
+    <div class="row" role="tabpanel" style="margin-top:10%" >
+
+            <div class= "col-lg-2">
+              <ul id="myTab" class="nav nav-tabs" role="tablist">
+                  <li role="presentation" class="active "><a href="#loans"  aria-controls="loans" role="tab" data-toggle="tab">Available loans</a></li>
+                  <li role="presentation"><a href="#dashboard" aria-controls="dashboard" role="tab" data-toggle="tab">Dashboard</a></li>  
+              </ul>
+            </div>
+            <div class="col-lg-8"> 
+              <div class="tab-content">
+                  <div id = "loans"  role="tabpanel" class="tab-pane  active">
+                      <div class="table-responsive" >
+                          <table class="table">
+                            <tr>
+                              <th>Loan Name</th><th>Duration</th><th>Yield</th><th>Credit Score</th><th>Amount</th><th>LL Score</th><th>Value at Risk</th><th>Rewards</th><th>Net Yield</th>
+                           </tr>
+                           <tr>
+                            <td>Loan 1</td><td>2Y</td><td>13.6%</td><td>625</td><td>$15000</td><td>5</td><td>11.4%</td><td>2</td><td>$16000</td><td><input type="checkbox"></td>
+                           </tr>
+                           <tr>
+                            <td>Loan 2</td><td>3Y</td><td>14.6%</td><td>700</td><td>$15500</td><td>6</td><td>12.4%</td><td>8</td><td>$17000</td><td><input type="checkbox"></td>
+                           </tr>
+                           <tr>
+                            <td>Loan 3</td><td>4Y</td><td>18.6%</td><td>825</td><td>$17000</td><td>7</td><td>11.4%</td><td>10</td><td>$16000</td><td><input type="checkbox"></td>
+                           </tr>
+                           <tr>
+                            <td>Loan 4</td><td>5Y</td><td>21.6%</td><td>325</td><td>$18000</td><td>10</td><td>11.4%</td><td>11</td><td>$16000</td><td><input type="checkbox"></td>
+                           </tr>
+                            
+                          </table>    
+                      </div>
+                  </div>
+                  <div id ="dashboard"  role ="tabpanel" class="tab-pane ">
+                      <h3>PieChart</h3>
+                      <div class="col-lg-3 mt">
+                            <canvas id="javascript" height="230" width="230"></canvas>
+                            <p>Loans</p>
+                            <br>
+                            <script>
+                              var doughnutData = [
+                                  {
+                                    value: 10,
+                                    color:"#74cfae"
+                                  },
+                                  {
+                                    value : 30,
+                                    color : "#3c3c3c"
+                                  },
+                                  {
+                                    value:40,
+                                    color:"#452244"
+                                  },
+                                  {
+                                    value : 10,
+                                    color : "#ff0000"
+                                  }
+                                ];
+                                var myDoughnut = new Chart(document.getElementById("javascript").getContext("2d")).Pie(doughnutData);
+                            </script>
+                      </div>
+                  </div>  
+              </div>    
+            </div>       
+    </div>        
+</body>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>LendLift</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="assets/img/logo1.png" alt=""></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="/borrow1.html">Borrow</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Dashboard <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/borrow3.html">Loan 1</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role ="button" aria-expaned="true"><span id="username"></span><span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                
+                <li><a id="logout">Logout</a></li>
+              </ul>
+            </li>
+            <li class="active" ><a href="#">contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="row" role"tabpanel" style="margin-top:10%">
+      <div class="col-lg-2" style="visibility:hidden">
+        <ul id="myTab" class="nav nav-pills" role="tablist">
+          <li role="presentation" class="active "><a href="#panel1"  aria-controls="panel1" role="tab" data-toggle="tab">Check Rate</a></li>
+          <li role="presentation"><a href="#panel2" aria-controls="panel2" role="tab" data-toggle="tab">Sign In</a></li>  
+        </ul>
+      </div>
+      
+        <div class = "col-lg-6">
+            <div class= "tab-content">    
+              <div id ="panel1" role="tabpanel" class="tab-pane  active  ">
+                    <div class="row">
+                      <div class="col-sm-4">  
+                        <label>Loan purpose:<select class="form-control">
+                          <option>Credit debt refinancing</option>
+                          <option>Debt relief</option>
+                         </select> </label>
+                      </div>
+                      <div class="col-sm-3">   
+                         <label>Enter Loan Amount:<input type="text" class="form-control" id="loanamt" name="loanamt"></label> 
+                      </div>
+                      <div class= "col-sm-4">
+                        <label>Credit quantity:<select id="creditscore" name="creditscore" class="form-control">
+                          <option value="1">Greater than 700</option>
+                          <option value="2">700 to 660</option>
+                          <option value="3">660 to 630</option>
+                          <option value="4">600 to 630</option>
+                          <option value="5">less than 600</option>
+                          <option value="0">Don't know</option>
+                         </select> </label>
+                      </div>
+                    </div>  
+                    <div class="row">
+                        <button class="btn btn-theme" style="margin-left:27%;margin-top:1%" onClick= "tabmove()">Check rate</button>
+                  </div>
+              </div>
+            
+
+            <div id="panel2" role="tabpanel" class="tab-pane">
+              <h2 class="centered"> Apply for a Loan</h2>  
+              <div class="panel-body">
+                        <fieldset>
+                          <label>Sign in Information</lablel>
+                          <div class="form-group">
+                                <input id="email" name='email' class ="form-control" type ="email" placeholder = 'E-mail' >
+                          </div>                  
+                          <div class="form-inline">
+                                  <div class ="form-group" >
+                                      <input id="pswd" type ='password' class ="form-control" name = "password" placeholder = "password" />
+                                   </div>   
+                                   <div class ="form-group" >
+                                      <input id="rpswd"  type ="password" class ="form-control" name='rpassword' placeholder = 're-enter password' />
+                                    </div>  
+                          </div>
+                          
+                          <label>Personal Information</label>
+                          <div class= "form-inline" >
+                            <div class = "form-group">
+                                <input id="firstname" name = "first_name" class ="form-control" placeholder = 'Legal first Name'  />
+                            </div>
+                            <div class = "form-group">
+                                <input id="lastname" class ="form-control" name ="last_name" placeholder = ' Last Name' />
+                            </div>
+                          </div> 
+                          <div class = "form-space form-group">
+                            <input id="home" class ="form-control" name ="home" placeholder = "Home Address" />   
+                          </div>
+                          <div class= "form-inline" >
+                                <div class = "form-group">  
+                                    <input id="city" name ="city" class ="form-control" placeholder = 'City' />
+                                </div>
+                                <div class = "form-group" >   
+                                    <input id="state" name ="state" class ="form-control" placeholder="State" />
+                                </div>
+                                <div class = "form-group"  >  
+                                    <input id="zip" id ="zipcode" name ="zipcode" class ="form-control" placeholder = 'Zip Code' />
+                                </div>
+                                <div class = "form-space  form-group" >
+                                <label><input name = 'mail' type = 'checkbox' />I have a separate maling address
+                                 </label>   
+                                </div>
+                          </div> 
+                          <div class = "form-inline">
+                                <div class = "form-group" >         
+                                      <input id="homeph" name ="homeph" class ="form-control" placeholder = "Home Phone number" />
+                                </div>
+                                <div class = "form-group" >         
+                                      <input id="secph" name ="secondaryph" class ="form-control" placeholder = "Secondary Phone number" />
+                                </div>                                                                                                         
+                          </div>
+                          <div class = "form-space  form-group" style="width:200px;" >         
+                                      <input id="dob" name ="dob" type="date" class ="form-control" placeholder ="date of birth(dd-mm-yy)" />
+                          </div>
+                          <div class = "form-group" >                     
+                                      <label>Annual Income</label>
+                                      <input id="annincome" name = "income" class ="form-control"/>  
+                          </div>             
+                          <div class = "form-group" >                     
+                                      <label>SSN</label>
+                                      <input id="ssn" name = "ssn" type ="password" class ="form-control"/>  
+                          </div>             
+                          <div class = "form-group" >                     
+                                      <label>Current Minimum Payment(Optional)</label>
+                                       <input type="range" value="1" id="currentMinPayment" name="currentMinPayment" min="1" max="100" step="1" onchange="printvalue(this.value,'range1')">
+                                       <input id ="range1" type="text" size="2" value="1"><label> $</label>
+                          </div>
+                          <div class = "form-group" >                     
+                                      <label>Current APR</label>
+                                       <input type="range" value="1" id="currentAPR" name="currentAPR" min="1" max="100" step="1" onchange="printvalue(this.value,'range4')">
+                                       <input id ="range4" type="text" size="2" value="1"><label>%</label>
+                          </div>             
+                          <div class = "form-group" >                     
+                                      <label>Preffered Minimum Payment(Optional)</label>
+                                       <input type="range"  value="1" id="prefminpayment" name="prefminpayment" min="1" max="100" step="1" onchange="printvalue(this.value,'range2')">
+                                       <input id ="range2" type="text" size="2" value="1"><label>$</label>
+                          </div>             
+                          <div class = "form-group" >                     
+                                      <label>Preffered Loan Duration(Optional)</label>
+                                       <input type="range"  value="1" id="prefloanduration" name="prefloanduration" min="1" max="100" step="1" onchange="printvalue(this.value,'range3')">
+                                       <input id ="range3" type="text" size="2" value="1"><label>months</label>
+                          </div>             
+                          
+                            <label>Checking the box constitutes your electronic signature to</label>
+                            <label><input id="condition1" name ='terms' type  = 'checkbox' /> <a href ="#">Terms and Conditions </a>and<a href ="#"> Credit profile Authorization</a></label                        
+                          </fieldset>
+                          <div>
+                            <button id="apply" class="btn btn-theme " type="button" onClick ="getOutput()" disabled>Apply</button>
+                          </div>  
+                        </div><!--panel-body-->
+                    </div>    
+                <div id ="output"></div>
+          </div>
+      </div>
+    </div>
+
+  <script type="text/javascript">
+
+      $( document ).ready(function() {
+          var name = localStorage.investName;
+          var id = localStorage.userid;
+          if(name == "notset") {
+            window.open("/index.html","_self");
+          }else {
+            initialize(id);
+          }
+      });
+
+      $("#logout").click(function(){
+        localStorage.investName = "notset";
+        window.open("/index.html","_self");
+      });
+
+      $('#condition1').click(function(){
+        var status = $("#condition1").is(":checked");
+        if(status == true)
+          $('#apply').attr('disabled',false);
+        else $('#apply').attr('disabled',true);
+      });
+
+    function initialize(uid) {
+      
+       $.ajax({
+          type:"POST",
+          crossDomain:true,
+          url:'/user2.php',
+          data:{
+            user:uid
+            
+          },
+          complete: function (response) {
+              // $('#output').html(response.responseText);
+              var end =  jQuery.parseJSON(response.responseText);
+              $('#username').text(end.firstname);
+                $('#firstname').val(end.firstname);
+                $('#lastname').val(end.lastname);
+                $('#pswd').val(end.pswd);
+                $('#rpswd').val(end.pswd);
+                $('#email').val(end.email);
+                $('#home').val(end.home);
+                $('#city').val(end.city);
+                $('#state').val(end.state);
+                $('#zip').val(end.zip);
+                $('#homeph').val(end.homeph);
+                $('#secph').val(end.secph);
+                $('#homeph').val(end.homeph);
+                $('#dob').val(end.dob);
+                $('#annincome').val(end.annincome);
+                $('#ssn').val(end.ssn);
+              
+          },
+          error: function () {
+             
+          }
+      });
+      return false;
+        
+    }
+
+    function printvalue(val,id) {
+      document.getElementById(id).value=val; 
+    }
+    function tabmove() {
+      $('#myTab li:eq(1) a').tab('show')
+    }
+     function getOutput() {
+      var name = document.getElementById("firstname").value;
+      var lname = document.getElementById("lastname").value;
+      var mail = document.getElementById("email").value;
+      var lamt = document.getElementById("loanamt").value;
+      var cmp = document.getElementById("currentMinPayment").value;
+      var capr =document.getElementById("currentAPR").value;
+      var prefminp =document.getElementById("prefminpayment").value;
+      var prefld =document.getElementById("prefloanduration").value;
+      var cred =document.getElementById("creditscore").value;
+      var zip = document.getElementById("zip").value;
+      var ssn = document.getElementById("ssn").value;
+       $.ajax({
+          type:"POST",
+          crossDomain:true,
+          url:'http://127.0.0.1/user.php',
+          data:{
+            firstname : name,
+            lastname : lname,
+            emailaddress : mail,
+            zipcode : zip,
+            ssn : ssn,
+            loanamt :lamt, 
+            currentMinPayment : cmp,
+            currentAPR : capr,
+            prefminpayment :prefminp,
+            prefloanduration : prefld,
+            creditscore : cred
+            
+          },
+          complete: function (response) {
+              // $('#output').html(response.responseText);
+              var end =  jQuery.parseJSON(response.responseText);
+              // var ff = typeof(Storage);
+              // localStorage.name1 = end.name1
+              if(end.status1 == '1' ) {
+                localStorage.setItem("name1", end.name1);
+                localStorage.setItem("Loan", end.Loan);
+                localStorage.setItem("Term", end.Term);
+                localStorage.setItem("oFees", end.oFees);
+                localStorage.setItem("sFees", end.sFees);
+                localStorage.setItem("nRate", end.nRate);
+                localStorage.setItem("eRate", end.eRate);
+                localStorage.setItem("payment", end.payment);
+                localStorage.setItem("reward", end.Reward);
+                localStorage.setItem("bRate", end.bRate);
+                localStorage.setItem("adjR", end.adjR);
+                localStorage.setItem("uFees", end.uFees);
+                localStorage.setItem("lFees", end.lFees);
+                localStorage.setItem("cpf", end.cpf);
+                localStorage.setItem("col60", end.col60);
+                localStorage.setItem("pFees", end.pFees);
+                window.open("borrow2.html","_self");
+              }else if(end.status1 == '0'){
+                  localStorage.setItem("message",end.message);
+                  window.open("borrowfail.html","_self");
+              }
+
+              
+              
+          },
+          error: function () {
+              $('#output').html(' there was an error Please try again!');
+          }
+      });
+      return false;
+        
+    }
+  </script>
+  
+</body>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>LendLift</title>
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="assets/css/main.css"> 
+  <link rel="canonical" href="http://www.lendlift.com/">
+  <link rel="alternate" type="application/rss+xml" title="LendLift" href="http://www.lendlift.com/feed.xml" />
+
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  
+</head>
+
+
+  <body>
+
+  <div class="page-container">
+  
+  <header>
+  <a href="index.html" class="logo">
+<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 592 560" enable-background="new 0 0 592 560" xml:space="preserve">
+<g>
+    <polygon fill="#FFFFFF" points="144,429 144,224 88,224 88,478 145.23,478 268,478 268,429    "/>
+    <polygon fill="#FFFFFF" points="56,306 0,306 0,560 57.086,560 179,560 179,511 56,511    "/>
+</g>
+<g>
+    <path fill="#FFFFFF" d="M473.377,107.311c-5.334,0-9.377,0.485-12.377,1.092v64.536c3,0.485,6.688,0.606,10.719,0.606
+        c22.043,0,34.014-12.616,34.014-34.694C505.852,119.563,495.186,107.311,473.377,107.311z"/>
+    <path fill="#FFFFFF" d="M183,0v398h409V0H183z M258,101h11v73h34v8h-45V101z M313,297h-55v-92h20v73h35V297z M355,297h-21v-92h21
+        V297z M359,182h-45v-81h43v8h-33v26h32v9h-32v30h35V182z M429,224h-33v17h31v19h-31v37h-21v-92h54V224z M432,182h-9.177
+        l-25.363-41.833c-5.572-9.098-10.904-18.612-14.935-27.467l-0.855,0.035c0.592,10.311,0.33,20.051,0.33,33.637V182h-10v-81h12.541
+        l25.6,40.64c5.926,9.583,10.549,17.833,14.342,26.203l-0.031-0.303c-0.947-10.918-1.451-21.047-1.451-33.784V101h9V182z M515,224
+        h-25v73h-21v-73h-25v-19h71V224z M505.311,170.27c-7.467,7.643-19.925,11.767-35.452,11.767c-7.349,0-14.858-0.364-18.858-0.97
+        v-80.427c5-0.97,13.882-1.698,22.059-1.698c14.814,0,25.43,3.518,32.423,10.19c7.111,6.672,11.293,16.134,11.293,29.356
+        C516.774,151.831,512.776,162.749,505.311,170.27z"/>
+</g>
+</svg>
+</a>
+  <br>
+  - Demo - 
+</header>
+  
+  <div class="wrapper">
+    
+    <form method="post" action="lluserapplicationform.php" onsubmit="return window.confirm('By selecting OK: I have reviewed and consent to the Credit Authorization. I agree to the Terms &amp; Conditions. I agree to the Privacy Statement.');">
+    <section>
+      
+      <div class="page">
+          <ul>
+            <li>Low fixed rates</li>
+            <li>Fast approval</li>
+            <li>No hidden fees</li>
+            <li><strong>Your debt free life awaits!</strong></li> 
+          </ul>
+
+        <div class="form">
+         
+          <span><input name="firstname" type="text"><label>First Name</label></span>
+          <span><input name="lastname" type="text"><label>Last Name</label></span>
+          <span><input name="emailaddress" type="text"><label>Email</label></span>
+          <span><input type="button" value="Continue" id="btn_continue"></span>
+        </div>
+      </div>
+      
+
+
+    </section>
+    <section>
+      <div class="page">
+        <div class="form">         
+          <span><input name="zipcode" type="text"><label>ZIP Code</label></span>
+          <span><input name="ssn" type="text"><label>Social Security Number</label></span>
+          <span><input name="loanamt" type="text"><label>Loan Amount</label></span>
+          <span>
+            <select name="creditscore" style="margin-top:20px; width: 100%; border: 2px solid green; font-size: 12px; height: 30px; line-height: 30px; display: block;"> 
+            
+            <option value="" selected>Select a range</option>
+            <option value="1">Greater than 700</option>
+            <option value="2">660 - 700</option>
+            <option value="3">630 - 660</option>
+            <option value="4">600 - 630</option>
+            <option value="5">Less than 600 </option>
+            <option value="0">Don't know</option>
+
+            </select>
+
+            <label>Credit Score Range</label>
+          </span>
+         
+          <span><input name="currentMinPayment" id="range1" type="range" min="0" max="1000" value="0" oninput="rangevalue1.value=value">$<output id="rangevalue1">0</output>
+          <label>Current Minimum Payment (Optional)</label>
+          </span>
+          <span>
+          <input name="prefminpayment" id="range2" type="range" min="0" max="1000" value="0" oninput="rangevalue2.value=value">$<output id="rangevalue2">0</output>
+          <label>Preferred Minimum Payment (Optional)</label>
+          </span>
+          <span>
+          <input name="prefloanduration" id="range3" type="range" min="0" max="60" value="0" oninput="rangevalue3.value=value"><output id="rangevalue3">0</output> months
+          <label>Preferred Loan Duration (Optional)</label>
+          </span>
+
+         
+          
+          <span><input type="submit" value="Submit" id="btn_submit"></span>
+        </div>
+      </div>
+    </section>
+
+    </form>
+  </div>
+
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('#btn_continue').click(function(){
+      $('.wrapper').css('left', '-100%');
+    });
+  });
+</script>
+
+  </body>
+
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>LendLift</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script src ="assets/js/bootstrap.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="assets/img/logo1.png" alt=""></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="/add.html">Invest</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Dashboard <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/invest.html">Loans</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role ="button" aria-expaned="true"><span id="username"></span><span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                
+                <li><a id="logout">Logout</a></li>
+              </ul>
+            </li>
+            <li class="active" ><a href="#">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+    <div class="row" role="tabpanel" style="margin-top:10%" >
+
+            <div class= "col-lg-2">
+              <ul id="myTab" class="nav nav-pills" role="tablist">
+                  <li role="presentation" class="active "><a href="#loans"  aria-controls="loans" role="tab" data-toggle="tab"> &nbsp Available loans</a></li>
+                  <li role="presentation"><a href="#dashboard" aria-controls="dashboard" role="tab" data-toggle="tab">&nbsp Portfolio&nbsp&nbsp&nbsp&nbsp</a></li>  
+                  <li role="presentation"><a href="#summary" aria-controls="summary" role="tab" data-toggle="tab">&nbsp Summary</a></li> 
+                  <li role="presentation"><a href="#macro" aria-controls="macro" role="tab" data-toggle="tab">&nbsp Macro Index</a></li> 
+                  <li role="presentation"><a href="#yields" aria-controls="yields" role="tab" data-toggle="tab">&nbsp Yields &nbsp&nbsp&nbsp&nbsp</a></li>   
+                  <li role="presentation"><a href="#reward" aria-controls="reward" role="tab" data-toggle="tab">&nbsp Rewards &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></li>   
+              </ul>
+            </div>
+            <div class="col-lg-9"> 
+              <div class="tab-content">
+                  <div id = "loans"  role="tabpanel" class="tab-pane  active">
+                      <div class="table-responsive" >
+                          <table class="table">
+                            <tr>
+                              <td>LoanID</td><td>Amount</td><td>Duration</td><td>LL Band</td><td>Expected Yield</td><td>Reward Option</td><td>Expected Yield after Rewards</td><td>check box</td>             
+                           </tr>
+                           <tr>
+                              <td> Loan 11</td><td>$7500</td><td>36 months</td><td>1</td><td>8.30%</td><td>1%</td><td>7.70%</td><td><input id = "loan" type="checkbox"></td>
+                           </tr>
+                           <tr>
+                              <td> Loan 12</td><td>$7500</td><td>36 months</td><td>1</td><td>8.30%</td><td>1%</td><td>7.70%</td><td><input id = "loan" type="checkbox"></td>
+                           </tr>
+                           <tr>
+                              <td> Loan 13</td><td>$7500</td><td>36 months</td><td>1</td><td>8.30%</td><td>1%</td><td>7.70%</td><td><input id = "loan" type="checkbox"></td>
+                           </tr>
+                           <tr>
+                              <td> Loan 14</td><td>$7500</td><td>36 months</td><td>1</td><td>8.30%</td><td>1%</td><td>7.70%</td><td><input id = "loan" type="checkbox"></td>
+                           </tr>
+                            
+                          </table>    
+                      </div>
+                      <label>I Agree to <a href="#">Terms and conditions </a><input id="condition" type="checkbox" onClick="check()"></label>
+                      <div >
+                        <button id ="invest" class= "centered btn btn-theme btn-large " type="button" disabled> Invest</button>
+                    </div>
+                    <div id = "alert_placeholder"></div>
+                  </div>
+                  <div id ="dashboard"  role ="tabpanel" class="tab-pane ">
+                      <h3>You have invested in</h3>
+                      <div class="col-lg-3 mt">
+                            <canvas id="javascript" height="230" width="230"></canvas>
+                            <p>Loans</p>
+                            <br>
+                            <script>
+                              var doughnutData = [
+                                  {
+                                    value: 10,
+                                    color:"#74cfae"
+                                  },
+                                  {
+                                    value : 30,
+                                    color : "#ffff00"
+                                  },
+                                  {
+                                    value:40,
+                                    color:"#452244"
+                                  },
+                                  {
+                                    value : 10,
+                                    color : "#ff0000"
+                                  }
+                                ];
+                                var myDoughnut = new Chart(document.getElementById("javascript").getContext("2d")).Pie(doughnutData);
+                            </script>
+                      </div>
+                      <div class="col-lg-6 col-lg-offset-3">
+                        <div class="container">
+                          <div class ="row">
+                              <div class="col-sm-1" style="padding:0">
+                                <div style="background-color:#ff0000;width:10px;height:10px;margin-left:50%;" ></div>          
+                               </div> 
+                            <div class="col-sm-4" style="margin-top:-10px;padding:0;"><p>Loan 1</p></div>
+                          </div>
+                          <div class ="row">
+                              <div class="col-sm-1" style="padding:0">
+                                <div style="background-color:#452244;width:10px;height:10px;margin-left:50%;" ></div>          
+                               </div> 
+                            <div class="col-sm-4" style="margin-top:-10px;padding:0;"><p>Loan 2</p></div>
+                          </div>
+                          <div class ="row">
+                              <div class="col-sm-1" style="padding:0">
+                                <div style="background-color:#ffff00;width:10px;height:10px;margin-left:50%;" ></div>          
+                               </div> 
+                            <div class="col-sm-4" style="margin-top:-10px;padding:0;"><p>Loan 3</p></div>
+                          </div>
+                          <div class ="row">
+                              <div class="col-sm-1" style="padding:0">
+                                <div style="background-color:#74cfae;width:10px;height:10px;margin-left:50%;" ></div>          
+                               </div> 
+                            <div class="col-sm-4" style="margin-top:-10px;padding:0;"><p>Remaining amount</p></div>
+                          </div>
+                        </div>
+                      </div>
+
+                  </div>  <!--dashboard-->  
+               
+              <div id = "summary"  role="tabpanel" class="tab-pane">
+                      <div class="table-responsive" >
+                          <table class="table">
+                            <tr>
+                              <th>LL Band</th><th>Loan Id</th><th>Loan Amount</th><th>Duration</th><th>State</th><th>Balance</th><th>Total Payments</th><th>Cuurrent Yield</th><th>Expected</th><th>Rewards </th><th>Net Ann. Yield</th><th>Var Imp</th>
+                           </tr>
+                           <tr>
+                            <td>9</td><td>Loan-x1</td><td>$7500</td><td>35</td><td>Active</td><td>$222</td><td>$7,774</td><td>6.82%</td><td>8.30%</td><td>1.00%</td><td>4.90%</td><td>8.90%</td>
+                           </tr>
+                           <tr>
+                            <td>3</td><td>Loan-x2</td><td>$7500</td><td>38</td><td>Paid</td><td>$0</td><td>$10,613</td><td>8.30%</td><td>8.30%</td><td>1.00%</td><td>7.20%</td><td>5.00%</td>
+                           </tr>
+                           <tr>
+                            <td>7</td><td>Loan-x3</td><td>$7500</td><td>36</td><td>Active</td><td>$4,550</td><td>$3,020</td><td>2.39%</td><td>8.30%</td><td>1.00%</td><td>3.00%</td><td>12.20%</td>
+                           </tr>
+                           <tr>
+                            <td>5</td><td>Loan-x4</td><td>$7500</td><td>36</td><td>Delinquent</td><td>$4,727</td><td>$2,857</td><td>3.01%</td><td>8.30%</td><td>1.00%</td><td>3.00%</td><td>12.20%</td>
+                           </tr>
+                           <tr>
+                            <td>1</td><td>Loan-x5</td><td>$7500</td><td>38</td><td>Active</td><td>$7,251</td><td>$251</td><td>0.50%</td><td>8.30%</td><td>1.00%</td><td>7.70%</td><td>4.10%</td>
+                           </tr>
+                           <tr >
+                            <th>Summary</th><th></th><th>$37,500</th><th></th><th></th><th>$16,750</th><th>$24,065</th><th>4.20%</th><th>8.30%</th><th>1.00%</th><th>5.16%</th><th>8.48%</th>
+                           </tr>
+                            
+                          </table>    
+                      </div>
+                  </div><!--summary--> 
+                  <div id = "yields"  role="tabpanel" class="tab-pane">
+                      <div class="table-responsive" >
+                          <table class="table">
+                            <tr>
+                              <th>LL Band</th><th>Loan Id</th><th>Cuurrent Yield</th><th>Expected</th><th>Rewards </th><th>Net Ann. Yield</th><th>Var Imp</th>
+                           </tr>
+                           <tr>
+                            <td>9</td><td>Loan-x1</td><td>6.82%</td><td>8.30%</td><td>1.00%</td><td>4.90%</td><td>8.90%</td>
+                           </tr>
+                           <tr>
+                            <td>3</td><td>Loan-x2</td><td>8.30%</td><td>8.30%</td><td>1.00%</td><td>7.20%</td><td>5.00%</td>
+                           </tr>
+                           <tr>
+                            <td>7</td><td>Loan-x3</td><td>2.39%</td><td>8.30%</td><td>1.00%</td><td>3.00%</td><td>12.20%</td>
+                           </tr>
+                           <tr>
+                            <td>5</td><td>Loan-x4</td><td>3.01%</td><td>8.30%</td><td>1.00%</td><td>3.00%</td><td>12.20%</td>
+                           </tr>
+                           <tr>
+                            <td>1</td><td>Loan-x5</td><td>0.50%</td><td>8.30%</td><td>1.00%</td><td>7.70%</td><td>4.10%</td>
+                           </tr>
+                           <tr>
+                            <th>Summary</th><th></th><th>4.20%</th><th>8.30%</th><th>1.00%</th><th>5.16%</th><th>8.48%</th>
+                           </tr>
+                            
+                          </table>    
+                      </div>
+                  </div><!--yield--> 
+                  <div id="macro" role="tabpanel" class="tab-pane">
+                      <div class="table-responsive" >
+                          <table class="table">
+                            <tr><th></th><th>Guidance</th><th>Stress Scenarios</th></tr>
+                            <tr>
+                                <td>Fed interest rates and Guidance</td><td></td><td></td>
+                            </tr> 
+                            <tr>
+                                <td>P2P Yield Index</td><td></td><td></td>
+                            </tr> 
+                            <tr>
+                                <td>LL Portfolio Yield Index</td><td></td><td></td>
+                            </tr> 
+                            <tr>
+                                <td>National Default Rates</td><td></td><td></td>
+                            </tr> 
+                            <tr>
+                                <td>Un-employment</td><td></td><td></td>
+                            </tr> 
+                            <tr>
+                                <td>GDP Expectation</td><td></td><td></td>
+                            </tr> 
+                          </table>
+                      </div>        
+                  </div>  
+                  <div id = "reward"  role="tabpanel" class="tab-pane">
+                    <p>Rewards is a behavioural tool used to mitigate the default risk of the loans  in your portfolio. As borrowers pay off their Loans, your VAR decreases.</p>
+
+                      <div class="table-responsive" >
+                          <table class="table">
+                            <tr>
+                              <th>Loan ID</th><th>Reduce APR</th><th>Payment Holidays</th><th>Cash-back</th><th>Offer?</th><th>Total Rewards</th>
+                            </tr>
+                            <tr>
+                              <td>Loan1</td> <td><input value="0.25%"></td><td><input value="2"></td><td><input value="Yes"></td><td><input value="Yes"></td><td>1.00%</td>
+                            </tr>
+                            <tr>
+                              <td>Loan2</td> <td><input value="1%"></td><td><input value="3"></td><td><input value="No"></td><td><input value="Yes"></td><td>1.00%</td>
+                            </tr>
+                            <tr>
+                              <td>Loan3</td> <td><input value="0.50%"></td><td><input value="1"></td><td><input value="Yes"></td><td><input value="Yes"></td><td>1.00%</td>
+                            </tr>
+                            <tr>
+                              <td>Loan4</td> <td><input value="1%"></td><td><input value="0"></td><td><input value="Yes"></td><td><input value="Yes"></td><td>1.00%</td>
+                            </tr>
+                            <tr>
+                              <td>Loan5</td> <td><input value="0.25%"></td><td><input value="4"></td><td><input value="Yes"></td><td><input value="Yes"></td><td>1.00%</td>
+                            </tr>
+                            
+                            
+                          </table>
+                      </div>
+                      <div class = "table-responsive">
+                          <table class="table">
+                            <tr>
+                              <th>Loan ID</th><th>Expected Ann. Yield</th><th>Current Yield</th><th>Net. Ann Yield after Rewards</th><th>Expected VaR Improvement</th>
+                            </tr>  
+                            <tr>
+                              <td>Loan1</td><td>8.30%</td><td>3.46%</td><td>4.90%</td><td>8.90%</td>
+                            </tr>
+                            <tr>
+                              <td>Loan2</td><td>8.30%</td><td>3.46%</td><td>7.20%</td><td>5.00%</td>
+                            </tr>
+                            <tr>
+                              <td>Loan3</td><td>8.30%</td><td>2.85%</td><td>3.00%</td><td>12.20%</td>
+                            </tr>
+                            <tr>
+                              <td>Loan4</td><td>8.30%</td><td>1.12%</td><td>3.00%</td><td>12.20%</td>
+                            </tr>
+                            <tr>
+                              <td>Loan5</td><td>8.30%</td><td>7.81%</td><td>7.70%</td><td>4.10%</td>
+                            </tr>
+                            <tr>
+                              <th>Summary</th> <th>8.30%</th ><th>4.71%</th><th>5.16%</th><th>8.48%</th>
+                            </tr>
+                          </table>  
+
+                      </div> 
+                  </div>        
+            </div>       
+    </div>
+    <script type="text/javascript">
+
+      $( document ).ready(function() {
+          var name = localStorage.investName;
+          var id = localStorage.userid;
+          if(name == "notset") {
+            window.open("/index.html","_self");
+          }else {
+             $('#username').text(name);
+          }
+      });
+
+       $("#logout").click(function(){
+        localStorage.investName = "notset";
+        window.open("/index.html","_self");
+      });
+
+
+      function check() {
+        var status = $("#condition").is(":checked");
+        if(status == true)
+        $('#invest').attr('disabled',false);
+        else $('#invest').attr('disabled',true);
+      }
+        bootstrap_alert = function() {}
+        bootstrap_alert.warning = function(message) {
+            $('#alert_placeholder').html('<div class="alert"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>')
+        }
+
+        $('#invest').on('click', function() {
+            var len = $('#loan:checked').length ;
+            if(len >= 1)
+            bootstrap_alert.warning('Congratulations ,you have invested in' + len + ' loans');
+            else if(len == 0)
+            bootstrap_alert.warning('Please select a loan to invest');
+        });
+      
+    </script>
+
+</body>

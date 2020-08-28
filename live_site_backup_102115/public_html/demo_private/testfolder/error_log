@@ -1,0 +1,2 @@
+[09-May-2015 12:28:40] PHP Fatal error:  Call to undefined function  get_posts() in /home3/lendlift/public_html/demo_private/testfolder/calc.php on line 112
+[09-May-2015 13:10:55] PHP Fatal error:  Call to undefined function  get_posts() in /home3/lendlift/public_html/demo_private/testfolder/calc.php on line 112

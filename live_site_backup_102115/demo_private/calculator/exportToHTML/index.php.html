@@ -1,0 +1,515 @@
+<html>
+<head>
+<title>index.php</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+index.php</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">&lt;!DOCTYPE html&gt; 
+&lt;?php 
+        define('FORMBUILDER_IN_TEMPLATE', true); 
+        require('/home3/lendlift/public_html/blog/wp-blog-header.php'); 
+ 
+?&gt; 
+ 
+&lt;html lang=&quot;en&quot; ng-app=&quot;LendLiftDebtCalc&quot;&gt; 
+  &lt;head&gt; 
+    &lt;meta charset=&quot;utf-8&quot;&gt; 
+    &lt;title&gt;LendLift - a Peer-to-Peer Lending Platform&lt;/title&gt; 
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; 
+    &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt; 
+    &lt;meta name=&quot;author&quot; content=&quot;&quot;&gt; 
+    &lt;link rel=&quot;icon&quot; href=&quot;img/lendlift_fav_ico.png&quot;&gt; 
+    &lt;link rel=&quot;shortcut icon&quot; href=&quot;img/lendlift_fav_ico.png&quot;/&gt; 
+     
+    &lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt; 
+     
+    &lt;link href=&quot;css/bootstrap.css&quot; rel=&quot;stylesheet&quot;&gt; 
+    &lt;style type=&quot;text/css&quot;&gt; 
+      body { 
+        padding-top: 60px; 
+        padding-bottom: 40px; 
+      } 
+    &lt;/style&gt; 
+ 
+    &lt;!--Wordpress Blog Related --&gt; 
+    &lt;link rel='stylesheet' id='twentytwelve-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&amp;#038;subset=latin,latin-ext' type='text/css' media='all' /&gt; 
+    &lt;link rel='stylesheet' id='twentytwelve-style-css'  href='http://blog.lendlift.com/wp-content/themes/twentytwelve/style.css?ver=3.5.2' type='text/css' media='all' /&gt; 
+ 
+    &lt;link href=&quot;css/bootstrap-responsive.css&quot; rel=&quot;stylesheet&quot;&gt; 
+    &lt;link href=&quot;css/custom.css&quot; rel=&quot;stylesheet&quot;&gt; 
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/angular-slider.min.css&quot;&gt; 
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt; 
+ 
+    &lt;!-- HTML5 shim, for IE6-8 support of HTML5 elements --&gt; 
+    &lt;!--[if lt IE 9]&gt; 
+      &lt;script src=&quot;../assets/js/html5shiv.js&quot;&gt;&lt;/script&gt; 
+    &lt;![endif]--&gt; 
+ 
+    &lt;!-- Fav and touch icons --&gt; 
+    &lt;!--share this block--&gt; 
+  &lt;script type=&quot;text/javascript&quot;&gt;var switchTo5x=true;&lt;/script&gt; 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;http://w.sharethis.com/button/buttons.js&quot;&gt;&lt;/script&gt; 
+  &lt;script type=&quot;text/javascript&quot;&gt;stLight.options( 
+          {publisher: &quot;fd3d3917-95a3-4dec-bb12-b880e068dde9&quot;, 
+              doNotHash: false, 
+              doNotCopy: false, 
+              hashAddressBar: false 
+ 
+          });&lt;/script&gt; 
+ 
+    &lt;!--google analytics --&gt;        
+    &lt;script type=&quot;text/javascript&quot;&gt; 
+ 
+      var _gaq = _gaq || []; 
+      _gaq.push(['_setAccount', 'UA-39805722-1']); 
+      _gaq.push(['_trackPageview']); 
+ 
+      (function() { 
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; 
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; 
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
+      })(); 
+ 
+    &lt;/script&gt; 
+    &lt;!-- Google Code for Debt Calculator Signup Conversion Page --&gt; 
+    &lt;script type=&quot;text/javascript&quot;&gt; 
+    /* &lt;![CDATA[ */ 
+    var google_conversion_id = 977755833; 
+    var google_conversion_language = &quot;en&quot;; 
+    var google_conversion_format = &quot;2&quot;; 
+    var google_conversion_color = &quot;ffffff&quot;; 
+    var google_conversion_label = &quot;3skzCOfzlAcQub2d0gM&quot;; 
+    var google_conversion_value = 0; 
+    var google_remarketing_only = false; 
+    /* ]]&gt; */ 
+    &lt;/script&gt; 
+    &lt;script type=&quot;text/javascript&quot; src=&quot;//www.googleadservices.com/pagead/conversion.js&quot;&gt; 
+    &lt;/script&gt; 
+    &lt;noscript&gt; 
+    &lt;div style=&quot;display:inline;&quot;&gt; 
+    &lt;img height=&quot;1&quot; width=&quot;1&quot; style=&quot;border-style:none;&quot; alt=&quot;&quot; src=&quot;//www.googleadservices.com/pagead/conversion/977755833/?value=0&amp;amp;label=3skzCOfzlAcQub2d0gM&amp;amp;guid=ON&amp;amp;script=0&quot;/&gt; 
+    &lt;/div&gt; 
+    &lt;/noscript&gt; 
+     
+ 
+    &lt;/head&gt; 
+ 
+  &lt;body ng-controller=&quot;AppCtrl&quot; ng-init=&quot;showSignUpForm=false;showEmailForm=false;showParagraph1=false;&quot;&gt; 
+ 
+    &lt;div class=&quot;navbar navbar-inverse navbar-fixed-top&quot;&gt; 
+ 
+      &lt;div class=&quot;navbar-inner&quot;&gt; 
+      &lt;a href=&quot;&quot;&gt;&lt;img class=&quot;logo&quot; src=&quot;http://lendlift.com/LendLift_Logo-Version_-2_transparent.png&quot;&gt;&lt;/a&gt; 
+        &lt;div class=&quot;container&quot;&gt; 
+ 
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-navbar&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.nav-collapse&quot;&gt; 
+            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt; 
+            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt; 
+            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt; 
+          &lt;/button&gt; 
+ 
+          &lt;div class=&quot;nav-collapse collapse&quot;&gt; 
+            &lt;ul class=&quot;nav&quot; id=&quot;navTab&quot;&gt; 
+ 
+              &lt;li class=&quot;active&quot; &gt;&lt;a href=&quot;#home&quot; data-toggle=&quot;pill&quot; analytics-event=&quot;Home&quot; analytics-on analytics-category=&quot;Tabs&quot; ng-model=&quot;hometabbutton&quot;&gt;Home&lt;/a&gt;&lt;/li&gt; 
+              &lt;li&gt;&lt;a href=&quot;#blog&quot; data-toggle=&quot;pill&quot; analytics-on  analytics-event=&quot;Blog&quot; analytics-category=&quot;Tabs&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt; 
+              &lt;li&gt;&lt;a href=&quot;#debtcalculator&quot; ng-click=&quot;openSubmitDebtCalcSignUp()&quot; data-toggle=&quot;pill&quot; analytics-on  analytics-event=&quot;Calculator&quot; analytics-category=&quot;Tabs&quot;  ng-model=&quot;debttabbutton&quot;&gt;Debt Calculator&amp;trade;&lt;/a&gt;&lt;/li&gt; 
+              &lt;li&gt;&lt;a href=&quot;#contact&quot; data-toggle=&quot;pill&quot; analytics-on  analytics-event=&quot;Contact&quot; analytics-category=&quot;Tabs&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt; 
+ 
+            &lt;/ul&gt; 
+            &lt;form class=&quot;navbar-form pull-right&quot;&gt; 
+                &lt;p&gt; COMING SOON!&lt;/p&gt; 
+                &lt;span class='st_facebook_hcount' displayText='Facebook' st_title=&quot;Try LendLift Debt Calculator to learn about paying off credit card debt.&quot;&gt;&lt;/span&gt; 
+                &lt;span class='st_twitter_hcount' displayText='Tweet' st_title=&quot;Try LendLift Debt Calculator to learn about paying off credit card debt.&quot;&gt;&lt;/span&gt; 
+                &lt;span class='st_linkedin_hcount' displayText='LinkedIn' st_title=&quot;Try LendLift Debt Calculator to learn about paying off credit card debt.&quot;&gt;&lt;/span&gt; 
+                &lt;!--&lt;span class='st_email_hcount' displayText='Email' st_title=&quot;Try LendLift Debt Calculator to learn about paying off credit card debt.&quot;&gt;&lt;/span&gt;--&gt; 
+                &lt;!--&lt;button type=&quot;button&quot; data-toggle=&quot;pill&quot; class=&quot;btn&quot;  ng-click=&quot;showSignUpForm=true&quot; &gt;Sign Up&lt;/button&gt;--&gt; 
+                &lt;a href=&quot;#signup&quot; class=&quot;btn&quot; style=&quot;{font-size: 18px}&quot; data-toggle=&quot;pill&quot; analytics-event=&quot;Signup&quot; analytics-on analytics-category=&quot;Tabs&quot;&gt;Sign Up&lt;/a&gt; 
+            &lt;/form&gt; 
+          &lt;/div&gt;&lt;!--/.nav-collapse --&gt; 
+        &lt;/div&gt; 
+      &lt;/div&gt; 
+    &lt;/div&gt; 
+ 
+ 
+    &lt;div class=&quot;container-fluid&quot;&gt; 
+    &lt;div class=&quot;tab-content&quot;&gt; 
+        &lt;div class=&quot;tab-pane active&quot; id=&quot;home&quot;&gt; 
+        &lt;!-- Carousel 
+                ================================================== --&gt; 
+                &lt;div id=&quot;myCarousel&quot; class=&quot;carousel slide&quot; ng-controller=&quot;CarouselCtrl&quot;&gt; 
+                &lt;carousel&gt; 
+                  &lt;div class=&quot;carousel-inner&quot;&gt; 
+ 
+                  &lt;slide ng-cloak&gt; 
+                      &lt;img src=&quot;img/bg.png&quot; alt=&quot;&quot;&gt; 
+                      &lt;div class=&quot;container&quot;&gt; 
+                          &lt;div class=&quot;carousel-caption&quot;&gt; 
+                              &lt;?php 
+                                   // Formbuilder manual form display. Replace the # in the following line with the ID number of the form to be displayed. 
+                                   if(function_exists('formbuilder_process_form')) echo formbuilder_process_form(5); 
+                                   // End of FormBuilder manual form display. 
+                                  ?&gt; 
+                              &lt;script type=&quot;text/ng-template&quot; id=&quot;modalAffiliateRedirect.html&quot;&gt; 
+ 
+                                  &lt;div id=&quot;box-referral&quot;&gt; 
+                                      &lt;div id=&quot;btn-close-email&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; ng-click=&quot;cancel()&quot;  analytics-on  analytics-event=&quot;AffiliateFormCloseClick&quot; analytics-category=&quot;HomePage&quot;&gt;×&lt;/button&gt;&lt;/div&gt; 
+ 
+                                      &lt;div id=&quot;lendingclublink&quot; ng-hide=&quot;lc_hide&quot;&gt;&lt;img src=&quot;img/lendingclub_affiliate.jpg&quot; ng-click=&quot;visit_affiliate()&quot; analytics-on  analytics-event=&quot;LendingClubClick&quot; analytics-category=&quot;HomePage&quot;&gt;&lt;/div&gt; 
+ 
+                                      &lt;div id=&quot;prosperlink&quot; ng-hide=&quot;pr_hide&quot;&gt;&lt;img src=&quot;img/prosper_affiliate.gif&quot; ng-click=&quot;visit_affiliate()&quot; analytics-on  analytics-event=&quot;ProsperClick&quot; analytics-category=&quot;HomePage&quot;&gt;&lt;/div&gt; 
+                                      &lt;p&gt; 
+                                          Thank you for visiting LendLift.  While we are still developing our product that can offer you a loan to help pay off your credit card debt, check your rate at our affiliate programs. Click on the image to continue. 
+                                            &lt;br&gt;&lt;br&gt; 
+                                          Please note that we do not share any information you submit to us with our affiliates. 
+                                      &lt;/p&gt; 
+                                  &lt;/div&gt; 
+                              &lt;/script&gt; 
+ 
+ 
+                              &lt;div id=&quot;box-affiliate&quot;&gt; 
+                                  &lt;a href=&quot;#debtcalculator&quot; ng-click=&quot;openSubmitDebtCalcSignUp('true')&quot; class=&quot;btn btn-large btn-primary&quot; data-toggle=&quot;pill&quot; analytics-on  analytics-event=&quot;TryOurDebtCalculatorPicClick&quot; analytics-category=&quot;HomePage&quot;&gt;Try our Debt Calculator&lt;/a&gt; 
+                                  &lt;div id=&quot;calc&quot;&gt;&lt;/div&gt; 
+                                  &lt;div id=&quot;affiliate&quot;&gt; 
+                                      &lt;div&gt;&lt;input type=&quot;text&quot; ng-model=&quot;txtAYourName&quot; placeholder=&quot;Your Name&quot;/&gt;&lt;/div&gt; 
+                                      &lt;div&gt;&lt;input type=&quot;text&quot; ng-model=&quot;txtAEmail&quot; placeholder=&quot;Email&quot;&gt;&lt;/div&gt; 
+                                      &lt;div&gt;&lt;input type=&quot;text&quot; ng-model=&quot;txtALoanAmount&quot; placeholder=&quot;(Opt) Loan Amount&quot;/&gt;&lt;/div&gt; 
+                                      &lt;div&gt;&lt;input type=&quot;text&quot; ng-model=&quot;txtACreditScore&quot; placeholder=&quot; (Opt) Credit Score&quot;/&gt;&lt;/div&gt; 
+                                      &lt;div&gt;&lt;input type=&quot;text&quot; ng-model=&quot;txtAZipCode&quot; placeholder=&quot;Zip Code&quot;/&gt;&lt;/div&gt; 
+                                      &lt;div&gt;&lt;input type=&quot;button&quot; ng-click=&quot;openAffiliateForm()&quot; value=&quot;Check Rate!&quot;&gt;&lt;/div&gt; 
+                                      &lt;div&gt;&lt;a href=&quot;&quot; ng-click=&quot;openTermsConditions()&quot;&gt;Terms and Conditions&lt;/a&gt;&lt;/div&gt; 
+ 
+                                  &lt;/div&gt; 
+                              &lt;/div&gt; 
+                          &lt;/div&gt; 
+                      &lt;/div&gt; 
+                  &lt;/slide&gt; 
+ 
+                    &lt;slide ng-cloak&gt; 
+                      &lt;img src=&quot;img/bg.png&quot; alt=&quot;&quot;&gt; 
+                      &lt;div class=&quot;container&quot;&gt; 
+                        &lt;div class=&quot;carousel-caption&quot;&gt; 
+                            &lt;iframe id=&quot;player_1&quot; class=&quot;th&quot; src=&quot;https://player.vimeo.com/video/74336114?title=0&amp;amp;byline=0&amp;amp;portrait=0&amp;amp;color=ffffff;api=1;player_id=player_1&quot; width=&quot;500&quot; height=&quot;281&quot; frameborder=&quot;0&quot; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt; 
+                            &lt;script src=&quot;js/froogaloop2.min.js&quot;&gt;&lt;/script&gt; 
+                            &lt;script src=&quot;js/track_video.js&quot;&gt;&lt;/script&gt; 
+                            &lt;p class=&quot;lead&quot;&gt; 
+                            &lt;a href=&quot;#debtcalculator&quot;  data-toggle=&quot;pill&quot; class=&quot;btn btn-large btn-primary&quot;  ng-click=&quot;openSubmitDebtCalcSignUp('true')&quot; analytics-on  analytics-event=&quot;TryOurDebtCalculatorClick&quot; analytics-category=&quot;HomePage&quot;&gt;Try our Debt Calculator&lt;/a&gt; 
+                            &lt;/p&gt; 
+                        &lt;/div&gt; 
+                      &lt;/div&gt; 
+                    &lt;/slide&gt; 
+ 
+                   &lt;slide ng-cloak&gt; 
+                    &lt;img src=&quot;img/bg.png&quot; alt=&quot;&quot;&gt; 
+                    &lt;div class=&quot;container&quot;&gt; 
+                      &lt;div class=&quot;carousel-caption&quot;&gt; 
+                        &lt;p class=&quot;lead2&quot;&gt;Now there is a better way to payoff credit cards&lt;/p&gt; 
+                        &lt;p class=&quot;lead2&quot;&gt;Melt Your Debt&lt;/p&gt; 
+                      &lt;/div&gt; 
+                    &lt;/div&gt; 
+                  &lt;/slide&gt; 
+                &lt;/div&gt; 
+                  &lt;!--&lt;a class=&quot;left carousel-control&quot; href=&quot;#myCarousel&quot; data-slide=&quot;prev&quot;&gt;&amp;lsaquo;&lt;/a&gt; 
+                  &lt;a class=&quot;right carousel-control&quot; href=&quot;#myCarousel&quot; data-slide=&quot;next&quot;&gt;&amp;rsaquo;&lt;/a&gt;--&gt; 
+                &lt;/carousel&gt; 
+         
+               &lt;/div&gt;&lt;!-- /.carousel --&gt; 
+                 
+ 
+ 
+      &lt;div class=&quot;row&quot; ng-cloak&gt; 
+        &lt;div class=&quot;span4&quot;&gt; 
+          &lt;h2&gt;The Problem&lt;/h2&gt; 
+          &lt;p&gt;The total U.S. credit card debt is approximately $857Bn.  This is a 
+              huge problem with respect to all responsible credit card borrowers 
+              with high Interest APR and non-existent refinancing options. Majority 
+              of credit card borrowers are not aware of credit card terms and do not 
+              know how to break from the perpetual payment cycles and get out of 
+              debt spiral.&lt;/p&gt; 
+          &lt;!--&lt;p&gt;&lt;a class=&quot;btn&quot; href=&quot;#&quot;&gt;View details &amp;raquo;&lt;/a&gt;&lt;/p&gt;--&gt; 
+        &lt;/div&gt; 
+        &lt;div class=&quot;span4&quot;&gt; 
+          &lt;h2&gt;Our Services&lt;/h2&gt; 
+          &lt;p&gt;LendLift is an online peer-to-peer marketplace that connects responsible credit card borrowers with Investors regarding the loan of your credit card debt only. We are building a platform that provides underserved borrowers the ability to pay down their balances and eliminate their debt faster and at lower interest rates, as oppose to the regular cycle of credit cards loan terms. Beyond serving borrowers, we offer our Investors reasonable yields than current bank product offers.Currently our services are limited to only providing education related to credit card payoff for borrowers.&lt;/p&gt; 
+ 
+ 
+       &lt;/div&gt; 
+        &lt;div class=&quot;span4&quot;&gt; 
+          &lt;h2&gt;About Us&lt;/h2&gt; 
+          &lt;p&gt;LendLift consists of a team of diverse, uniquely qualified financial 
+              services and business executives, industry veterans, engineers, 
+              designers and policy aficionados who understand the problem 
+              intrinsically at a grass root level. The team is passionate to create 
+              unique solutions that create debt awareness along with actionable 
+              products to help people navigate through the debt pay off cycles. 
+        &lt;/p&gt; 
+ 
+        &lt;/div&gt; 
+      &lt;/div&gt; 
+ 
+ 
+ 
+ 
+&lt;/div&gt; 
+&lt;div class=&quot;tab-pane&quot; id=&quot;contact&quot;&gt; 
+&lt;p&gt;At LendLift, we value your feedback and opinion which will help us build better products that suit our customer needs. &lt;br&gt;&lt;br&gt;&lt;/p&gt; 
+        &lt;a href=&quot;http://www.linkedin.com/company/3173849&quot;&gt;&lt;img  class=&quot;linkedin&quot; src=&quot;./img/img_trans.gif&quot;  width=&quot;1&quot; height=&quot;1&quot;&gt;&lt;/a&gt; 
+        &lt;a href=&quot;&quot;&gt;&lt;img class=&quot;facebook&quot;  src=&quot;./img/img_trans.gif&quot;    width=&quot;1&quot; height=&quot;1&quot;&gt;&lt;/a&gt; 
+        &lt;a href=&quot;https://twitter.com/@LendLift&quot;&gt;&lt;img class=&quot;twitter&quot; src=&quot;./img/img_trans.gif&quot;    width=&quot;1&quot; height=&quot;1&quot;&gt;&lt;/a&gt; 
+        &lt;a href=&quot;&quot;&gt;&lt;img class=&quot;google&quot;  src=&quot;./img/img_trans.gif&quot;    width=&quot;1&quot; height=&quot;1&quot;&gt;&lt;/a&gt; 
+        &lt;a href=&quot;&quot;&gt;&lt;img class=&quot;pinterest&quot;  src=&quot;./img/img_trans.gif&quot;    width=&quot;1&quot; height=&quot;1&quot;&gt;&lt;/a&gt;     &lt;br&gt;&lt;br&gt; 
+ 
+&lt;?php 
+// Formbuilder manual form display. Replace the # in the following line with the ID number of the form to be displayed. 
+if(function_exists('formbuilder_process_form')) echo formbuilder_process_form(1); 
+// End of FormBuilder manual form display. 
+?&gt; 
+ 
+&lt;/div&gt; 
+&lt;div class=&quot;tab-pane&quot; id=&quot;signup&quot;&gt; 
+     &lt;div class=&quot;row&quot;&gt; 
+        &lt;div class=&quot;span4&quot;&gt; 
+        &lt;h2&gt;Borrowers&lt;/h2&gt; 
+        &lt;p&gt;&lt;br&gt;If you are interested in Credit Card Payoff, sign up here and stay tuned.&lt;br&gt;&lt;br&gt;&lt;/p&gt; 
+           &lt;?php 
+           // Formbuilder manual form display. Replace the # in the following line with the ID number of the form to be displayed. 
+           if(function_exists('formbuilder_process_form')) echo formbuilder_process_form(2); 
+           // End of FormBuilder manual form display. 
+           ?&gt; 
+           &lt;p&gt; By clicking &quot;Send!&quot; you are agreeing with  &lt;a href=&quot;&quot; ng-click=&quot;openTermsConditions()&quot;&gt;Terms and Conditions&lt;/a&gt;&lt;/p&gt; 
+        &lt;/div&gt; 
+        &lt;!--&lt;div class=&quot;span4&quot;&gt; 
+        &lt;h2&gt;Lenders&lt;/h2&gt; 
+        &lt;p&gt;&lt;br&gt;If you are an Investor and interested in P2P asset class, sign up here and stay tuned.&lt;br&gt;&lt;br&gt;&lt;/p&gt; 
+           &lt;?php 
+           // Formbuilder manual form display. Replace the # in the following line with the ID number of the form to be displayed. 
+           if(function_exists('formbuilder_process_form')) echo formbuilder_process_form(3); 
+           // End of FormBuilder manual form display. 
+           ?&gt; 
+        &lt;/div&gt;--&gt; 
+        &lt;/div&gt; 
+    &lt;/div&gt; 
+ 
+ 
+        &lt;div class=&quot;tab-pane&quot; id=&quot;blog&quot;&gt; 
+            &lt;!--&lt;iframe src=&quot;http://blog.lendlift.com&quot; 
+        style=&quot;border: 0; width:100%; height:800px;&quot;&gt;&lt;/iframe&gt; 
+        &lt;/div&gt;--&gt; 
+ 
+ 
+        &lt;?php 
+        $posts = get_posts('numberposts=10&amp;order=DESC&amp;orderby=post_title'); 
+        foreach ($posts as $post) : setup_postdata( $post ); ?&gt; 
+            &lt;?php get_template_part( 'content', get_post_format() ); ?&gt; 
+        &lt;?php 
+        endforeach; 
+        ?&gt; 
+        &lt;/div&gt; 
+        &lt;div class=&quot;tab-pane&quot; id=&quot;debtcalculator&quot;&gt; 
+ 
+        &lt;div id=&quot;debt-calculator&quot;  style=&quot;width:850px; margin:0 auto;&quot;&gt; 
+ 
+    &lt;div id=&quot;box-left&quot;&gt; 
+        &lt;div id=&quot;one-left&quot;&gt;&lt;div class=&quot;section-number&quot;&gt;1.&lt;/div&gt;&lt;/div&gt; 
+        &lt;div id=&quot;one-right&quot;&gt; 
+ 
+            &lt;div id=&quot;one-title&quot; class=&quot;title2&quot;&gt;Add Balance (&lt;a href=&quot;http://blog.lendlift.com/2013/09/27/introducing-debt-calculator/&quot; target=&quot;_blank&quot; id=&quot;calc_help&quot;&gt;Instructions&lt;/a&gt;)&lt;/div&gt; 
+            &lt;div id=&quot;one-first&quot;&gt;&lt;input type=&quot;text&quot; ng-model=&quot;txtBalance&quot; ng-change=&quot;txtInputUpdate()&quot; id=&quot;txtBalance&quot; placeholder=&quot;[$]&quot; value=&quot;3500&quot;/&gt; 
+            &lt;span ng-click=&quot;addBalance()&quot; class=&quot;arrow-up&quot;  analytics-event=&quot;AddBalance&quot; analytics-on analytics-category=&quot;DebtCalculator&quot;&gt;&lt;/span&gt; 
+            &lt;span  ng-click=&quot;subBalance()&quot; class=&quot;arrow-down&quot;   analytics-event=&quot;SubBalance&quot; analytics-on analytics-category=&quot;DebtCalculator&quot;&gt;&lt;/span&gt;&amp;nbsp;&lt;label&gt;Balance&lt;/label&gt;&lt;/div&gt; 
+            &lt;div id=&quot;one-second&quot;&gt;&lt;input type=&quot;text&quot; ng-model=&quot;txtAPR&quot; ng-change=&quot;txtInputUpdate()&quot; id=&quot;txtAPR&quot; placeholder=&quot;[%]&quot;&gt; 
+            &lt;span  ng-click=&quot;addAPR()&quot; class=&quot;arrow-up&quot;   analytics-event=&quot;AddAPR&quot; analytics-on analytics-category=&quot;DebtCalculator&quot;&gt;&lt;/span&gt; 
+            &lt;span ng-click=&quot;subAPR()&quot; class=&quot;arrow-down&quot;   analytics-event=&quot;SubAPR&quot; analytics-on analytics-category=&quot;DebtCalculator&quot;&gt;&lt;/span&gt;&amp;nbsp;&lt;label&gt;APR&lt;/label&gt;&lt;/div&gt; 
+            &lt;div id=&quot;one-third&quot; &gt;&lt;input type=&quot;text&quot; ng-model=&quot;txtCurrentPayment&quot; ng-change=&quot;txtInputUpdate()&quot; id=&quot;txtCurrentPayment&quot; placeholder=&quot;[$]&quot;&gt; 
+            &lt;span ng-click=&quot;addCurrentPayment()&quot; class=&quot;arrow-up&quot;   analytics-event=&quot;AddCurrentPayment&quot; analytics-on analytics-category=&quot;DebtCalculator&quot;&gt;&lt;/span&gt; 
+            &lt;span ng-click=&quot;subCurrentPayment()&quot; class=&quot;arrow-down&quot;   analytics-event=&quot;SubCurrentPayment&quot; analytics-on analytics-category=&quot;DebtCalculator&quot;&gt;&lt;/span&gt;&amp;nbsp;&lt;label&gt;Current Payment&lt;/label&gt;&lt;/div&gt; 
+        &lt;/div&gt; 
+    &lt;/div&gt; 
+    &lt;div id=&quot;box-right&quot;&gt; 
+        &lt;div id=&quot;two-left&quot;&gt;&lt;div class=&quot;section-number&quot;&gt;2.&lt;/div&gt;&lt;/div&gt; 
+        &lt;div id=&quot;two-right&quot;&gt; 
+            &lt;div id=&quot;two-title&quot; class=&quot;title2&quot;&gt;Adjust Parameters &lt;/div&gt; 
+            &lt;div id=&quot;two-first&quot;&gt; 
+                &lt;label&gt;Monthly Payment&lt;/label&gt; 
+                &lt;slider class=&quot;sldrMonthlyPayment&quot; floor=&quot;50&quot; ceiling=&quot;sliders.floatceiling&quot; ng-model-mark1=&quot;sliders.minpayment&quot; ng-model-mark2=&quot;sliders.currentpayment&quot; step=&quot;1&quot; precision=&quot;0&quot; ng-model=&quot;sliders.payment&quot; ng-onStart=&quot;alert('blah')&quot; translate=&quot;currencyFormatting&quot; analytics-event=&quot;SliderMonthlyPayment&quot; analytics-on analytics-category=&quot;DebtCalculator&quot;&gt;&lt;/slider&gt; 
+            &lt;/div&gt; 
+ 
+ 
+            &lt;div id=&quot;two-second&quot;&gt; 
+                &lt;label&gt;Payoff Date&lt;/label&gt; 
+                &lt;slider id=&quot;sldrPayoffDate&quot; floor=&quot;1&quot; ceiling=&quot;sliders.maxmonths&quot; maxCeiling=&quot;3500&quot; ng-model-mark1=&quot;sliders.minterms&quot; ng-model-mark2=&quot;sliders.currentterms&quot; step=&quot;1&quot; precision=&quot;0&quot; ng-model=&quot;sliders.terms&quot;  translate=&quot;dateFormatting&quot;  analytics-event=&quot;SliderPayoffDate&quot; analytics-on analytics-category=&quot;DebtCalculator&quot;&gt;&lt;/slider&gt; 
+            &lt;/div&gt; 
+ 
+ 
+        &lt;/div&gt; 
+ 
+    &lt;/div&gt; 
+    &lt;div id=&quot;box-bottom&quot;&gt; 
+        &lt;div id=&quot;three-left&quot;&gt;&lt;div class=&quot;section-number&quot;&gt;3.&lt;/div&gt;&lt;/div&gt; 
+        &lt;div id=&quot;three-right&quot;&gt; 
+            &lt;div id=&quot;three-title&quot; class=&quot;title2&quot;&gt;See the Results&lt;/div&gt; 
+            &lt;div&gt;&lt;/div&gt; 
+            &lt;div id=&quot;three-checkboxes&quot;&gt; 
+                &lt;label style=&quot;color: rgb(160, 44, 44)&quot;&gt;Minimum&lt;/label&gt;&lt;input type=&quot;checkbox&quot; ng-model=&quot;chkMinPay&quot; ng-change=&quot;txtInputUpdate()&quot; analytics-event=&quot;chkMinPay&quot; analytics-on analytics-category=&quot;DebtCalculator&quot;/&gt; 
+                &lt;label style=&quot;color: rgb(31, 119, 180)&quot;&gt;Current&lt;/label&gt;&lt;input type=&quot;checkbox&quot; ng-model=&quot;chkCurPay&quot; ng-change=&quot;txtInputUpdate()&quot; analytics-event=&quot;chkCurPay&quot; analytics-on analytics-category=&quot;DebtCalculator&quot;/&gt; 
+                &lt;label style=&quot;color: rgb(44, 160, 44)&quot;&gt;Adjusted&lt;/label&gt;&lt;input type=&quot;checkbox&quot; ng-model=&quot;chkAdjPay&quot; ng-change=&quot;txtInputUpdate()&quot; analytics-event=&quot;chkAdjPay&quot; analytics-on analytics-category=&quot;DebtCalculator&quot;/&gt; 
+            &lt;/div&gt; 
+ 
+            &lt;div id=&quot;super-graph&quot;&gt;&lt;/div&gt; 
+ 
+        &lt;/div&gt; 
+        &lt;div style=&quot;text-align: center;&quot;&gt; 
+            &lt;div style=&quot;float:right ;padding-top:10px;padding-bottom: 10px&quot;&gt;&lt;!--&lt;input type=&quot;button&quot; ng-click=&quot;showEmailForm=true&quot; value=&quot;Submit These Preferences&quot;&gt;--&gt; 
+            &lt;?php 
+           // Formbuilder manual form display. Replace the # in the following line with the ID number of the form to be displayed. 
+           if(function_exists('formbuilder_process_form')) echo formbuilder_process_form(4); 
+           // End of FormBuilder manual form display. 
+           ?&gt; 
+                    &lt;script type=&quot;text/ng-template&quot; id=&quot;modalDebtCalcSignUp.html&quot;&gt; 
+                        &lt;div id=&quot;box-email&quot;&gt; 
+                            &lt;div id=&quot;btn-close-email&quot;&gt;&lt;button href=&quot;#home&quot; data-toggle=&quot;pill&quot; type=&quot;button&quot; class=&quot;close&quot; ng-click=&quot;cancel()&quot;  analytics-event=&quot;CancelDebtCalculator&quot; analytics-on analytics-category=&quot;DebtCalculator&quot;&gt;×&lt;/button&gt;&lt;/div&gt; 
+                           &lt;div id=&quot;lendliftlogo&quot;&gt;&lt;img height=100px src=&quot;http://lendlift.com/LendLift_Logo-Version_-2_transparent.png&quot;&gt;&lt;/div&gt; 
+                            &lt;div&gt;&lt;input type=&quot;text&quot; name='formBuilderForm[First_Name]' ng-model=&quot;txtFirstName&quot; placeholder=&quot;First Name&quot;/&gt;&lt;/div&gt; 
+                            &lt;div&gt;&lt;input type=&quot;text&quot; name='formBuilderForm[Last_Name]' ng-model=&quot;txtLastName&quot; placeholder=&quot;Last Name&quot;/&gt;&lt;/div&gt; 
+                            &lt;div&gt;&lt;input type=&quot;email&quot; name='formBuilderForm[Email]' ng-model=&quot;txtEmail&quot; placeholder=&quot;Email&quot; required&gt;&lt;/div&gt; 
+                            &lt;input type='hidden' name='formBuilderForm[FormBuilderID]' value='4' /&gt; 
+                            &lt;!--&lt;div&gt;&lt;input type=&quot;text&quot; ng-model=&quot;txtCreditCardBank&quot; placeholder=&quot;Credit Card Bank&quot;/&gt;&lt;/div&gt; 
+                            &lt;div&gt;&lt;input type=&quot;text&quot; ng-model=&quot;txtCreditLimit&quot; placeholder=&quot;Credit Limit&quot;/&gt;&lt;/div&gt; 
+                            &lt;div&gt;&lt;input type=&quot;text&quot; ng-model=&quot;txtCreditScore&quot; placeholder=&quot;Credit Score&quot;/&gt;&lt;/div&gt;--&gt; 
+                            &lt;div&gt;&lt;input type=&quot;text&quot; name='formBuilderForm[Zip_Code]' ng-model=&quot;txtZipCode&quot; placeholder=&quot;Zip Code&quot;/&gt;&lt;/div&gt; 
+                            &lt;div&gt;&lt;input type=&quot;button&quot; ng-click=&quot;ok()&quot; value=&quot;Use Debt Calculator!&quot; analytics-event=&quot;UseDebtCalculator&quot; analytics-on analytics-category=&quot;DebtCalculator&quot;&gt;&lt;/div&gt; 
+                            &lt;div&gt;&lt;a href=&quot;&quot; ng-click=&quot;openTermsConditions()&quot;  analytics-event=&quot;UseCalculatorTermsConditions&quot; analytics-on analytics-category=&quot;DebtCalculator&quot;&gt;Terms and Conditions&lt;/a&gt;&lt;/p&gt;&lt;/div&gt; 
+                            &lt;!--ng-click=&quot;submitCalcData();showEmailForm=false&quot; --&gt; 
+                        &lt;/div&gt; 
+                    &lt;/script&gt; 
+ 
+                 
+                &lt;script type=&quot;text/ng-template&quot; id=&quot;modalPreferences.html&quot;&gt; 
+                    &lt;div id=&quot;box-preferences&quot;&gt; 
+                        &lt;div id=&quot;btn-close-email&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; ng-click=&quot;cancel()&quot;  analytics-event=&quot;CancelPreferences&quot; analytics-on analytics-category=&quot;DebtCalculator&quot;&gt;×&lt;/button&gt;&lt;/div&gt; 
+                        &lt;div id=&quot;lendliftlogo&quot;&gt;&lt;img height=100px src=&quot;http://lendlift.com/LendLift_Logo-Version_-2_transparent.png&quot;&gt;&lt;/div&gt; 
+                        &lt;div&gt;&lt;input type=&quot;text&quot; ng-model=&quot;txtEmail&quot; placeholder=&quot;Email&quot;&gt;&lt;/div&gt; 
+                        &lt;div&gt;&lt;input type=&quot;text&quot; ng-model=&quot;txtCreditCardBank&quot; placeholder=&quot;Credit Card Bank&quot;/&gt;&lt;/div&gt; 
+                        &lt;div&gt;&lt;input type=&quot;text&quot; ng-model=&quot;txtCreditLimit&quot; placeholder=&quot;Credit Limit&quot;/&gt;&lt;/div&gt; 
+                        &lt;div&gt;&lt;input type=&quot;text&quot; ng-model=&quot;txtCreditScore&quot; placeholder=&quot;Credit Score Optional&quot;/&gt;&lt;/div&gt; 
+                        &lt;div&gt;&lt;p&gt;&lt;input type=&quot;checkbox&quot; ng-model=&quot;chkTerms&quot;/&gt;I have read and agreed to &lt;a href=&quot;&quot; ng-click=&quot;openTermsConditions()&quot; analytics-event=&quot;PreferencesTermsConditions&quot; analytics-on analytics-category=&quot;DebtCalculator&quot;&gt;Terms and Conditions&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt; 
+                        &lt;!--&lt;div&gt;&lt;p&gt;&lt;input type=&quot;checkbox&quot; ng-model=&quot;chkHelp&quot;/&gt;I authorize LendLift including third party lenders in helping to payoff the loan of credit card debt.&lt;/p&gt;&lt;/div&gt;--&gt; 
+                        &lt;div&gt;&lt;input type=&quot;button&quot; ng-click=&quot;ok()&quot; value=&quot;Submit Preferences&quot; analytics-event=&quot;SubmitPreferences&quot; analytics-on analytics-category=&quot;DebtCalculator&quot;&gt;&lt;/div&gt; 
+ 
+                    &lt;/div&gt; 
+                &lt;/script&gt; 
+                &lt;!--&lt;button type=&quot;button&quot; ng-click=&quot;resetCookie()&quot;&gt;reset cookie&lt;/button&gt;--&gt; 
+                &lt;button type=&quot;button&quot; ng-click=&quot;openSubmitPreferences()&quot;&gt;Submit These Preferences&lt;/button&gt; 
+ 
+            &lt;/div&gt; 
+        &lt;/div&gt; 
+        &lt;div id=&quot;summary-table&quot;&gt; 
+            &lt;label&gt;Summary Table&lt;/label&gt; 
+            &lt;div class=&quot;black-line-separator&quot;&gt;&lt;/div&gt; 
+            &lt;table width=&quot;100%&quot;&gt; 
+                &lt;tr&gt; 
+                &lt;td class=&quot;row-header&quot;&gt;&lt;label&gt;Options&lt;/label&gt;&lt;/td&gt; 
+                &lt;td class=&quot;row-header&quot;&gt;&lt;label&gt;Balance&lt;/label&gt;&lt;/td&gt; 
+                &lt;td class=&quot;row-header&quot;&gt;&lt;label&gt;APR&lt;/label&gt;&lt;/td&gt; 
+                &lt;td class=&quot;row-header&quot;&gt;&lt;label&gt;Payment&lt;/label&gt;&lt;/td&gt; 
+                &lt;td class=&quot;row-header&quot;&gt;&lt;label&gt;Time to Payoff&lt;/label&gt;&lt;/td&gt; 
+                &lt;td class=&quot;row-header&quot;&gt;&lt;label&gt;Total Payment&lt;/label&gt;&lt;/td&gt; 
+                &lt;td class=&quot;row-header&quot;&gt;&lt;label&gt;Total Savings&lt;/label&gt;&lt;/td&gt; 
+                &lt;/tr&gt; 
+ 
+ 
+            &lt;tr ng-repeat=&quot;row in rows&quot;&gt; 
+ 
+                    &lt;td class=&quot;row-cell {{ row.color }}&quot; style=&quot;text-align: left;&quot;&gt;&lt;label  class=&quot;row-cell {{ row.color }}&quot;&gt; {{ row.label }}&lt;/label&gt;&lt;/td&gt; 
+                    &lt;td class=&quot;row-cell {{ row.color }}&quot; style=&quot;color: {{ row.color }}&quot;&gt;{{ row.balance }}&lt;/td&gt; 
+                    &lt;td class=&quot;row-cell {{ row.color }}&quot; style=&quot;color: {{ row.color }}&quot;&gt;{{ row.apr }}&lt;/td&gt; 
+                    &lt;td class=&quot;row-cell {{ row.color }}&quot; style=&quot;color: {{ row.color }}&quot;&gt;{{ row.payment }}&lt;/td&gt; 
+                    &lt;td class=&quot;row-cell {{ row.color }}&quot; style=&quot;color: {{ row.color }}&quot;&gt;{{ row.timetopayoff }}&lt;/td&gt; 
+                    &lt;td class=&quot;row-cell {{ row.color }}&quot; style=&quot;color: {{ row.color }}&quot;&gt;{{ row.totalpayment }}&lt;/td&gt; 
+                    &lt;td class=&quot;row-cell {{ row.color }}&quot; style=&quot;color: {{ row.color }}&quot;&gt;{{ row.totalsavings }}&lt;/td&gt; 
+            &lt;/tr&gt; 
+ 
+ 
+            &lt;/table&gt; 
+            &lt;div class=&quot;black-line-separator&quot;&gt;&lt;/div&gt; 
+        &lt;/div&gt; 
+ 
+    &lt;/div&gt; 
+    &lt;div id=&quot;box-details&quot;&gt; 
+        &lt;div id=&quot;detail-minpay-graph&quot;&gt;&lt;/div&gt; 
+        &lt;div id=&quot;detail-totalpay-graph&quot;&gt;&lt;/div&gt; 
+        &lt;div id=&quot;detail-payoff-graph&quot;&gt;&lt;/div&gt; 
+        &lt;div id=&quot;detail-savings-graph&quot;&gt;&lt;/div&gt; 
+    &lt;/div&gt; 
+    &lt;div id=&quot;box-disclosures&quot;&gt; 
+        &lt;div style=&quot;float:left;padding:5px&quot;&gt;&lt;b&gt;Disclosures&lt;/b&gt; 
+            The Information derived from the interactive Debt calculators are made available to you as self-help tools for your independent use and are not intended to provide debt/investment advice. We can not and do not guarantee their applicability or accuracy in regard to your individual circumstances with respect to your loan and debt of the credit and disclaim any and all form of liability whatsoever. All examples are hypothetical and are for illustrative purposes. We encourage you to seek personalized advice from qualified professionals regarding all personal finance issues. 
+ 
+        &lt;/div&gt; 
+        &lt;div style=&quot;float:left;padding:5px&quot;&gt; 
+        &lt;b&gt;Minimum Payment Disclosure&lt;/b&gt; 
+ 
+            Our current calculator assumes that your minimum payment remains constant throughout your payoff time-period. This is the optimistic scenario for paying off your credit card debt. In reality your minimum payment reduces as you pay off balances as it is based on a percent of your outstanding balance. This can greatly increase the length of time it takes to pay off your credit cards. 
+        &lt;/div&gt; 
+ 
+    &lt;/div&gt; 
+ 
+ 
+        &lt;/div&gt; 
+ 
+        &lt;/div&gt; 
+    &lt;/div&gt; 
+ 
+ 
+      &lt;hr&gt; 
+ 
+ 
+          &lt;footer&gt; 
+              &lt;p&gt;LendLift Inc is not associated with social media networks such as Facebook, Twitter and LinkedIn&lt;/p&gt; 
+              &lt;p&gt; LendLift Inc, 8 W 38TH Street Suite 801, New York, NY 10018 contact@lendlift.com &amp;copy; 2013 LendLift Inc. &lt;a href=&quot;&quot; ng-click=&quot;openTermsConditions()&quot;  analytics-event=&quot;TermsConditions&quot; analytics-on analytics-category=&quot;HomePage&quot;&gt;Terms and Conditions&lt;/a&gt;&lt;/a&gt; 
+ 
+        &lt;/p&gt; 
+ 
+ 
+      &lt;/footer&gt; 
+ 
+    &lt;/div&gt; &lt;!-- /container --&gt; 
+ 
+    &lt;!-- Le javascript 
+    ================================================== --&gt; 
+    &lt;!-- Placed at the end of the document so the pages load faster --&gt; 
+ 
+    &lt;script src=&quot;js/bootstrap-tab.js&quot;&gt;&lt;/script&gt; 
+    &lt;script src=&quot;js/bootstrap-modal.js&quot;&gt;&lt;/script&gt; 
+    &lt;script src=&quot;js/bootstrap-transition.js&quot;&gt;&lt;/script&gt; 
+    &lt;script src=&quot;js/bootstrap-scrollspy.js&quot;&gt;&lt;/script&gt; 
+    &lt;script src=&quot;js/bootstrap-carousel.js&quot;&gt;&lt;/script&gt; 
+ 
+    &lt;script src=&quot;js/d3.v3.min.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; 
+    &lt;script src=&quot;js/angular.min.js&quot;&gt;&lt;/script&gt;&lt;!--1.1.4--&gt; 
+     
+    &lt;script src=&quot;js/angulartics.min.js&quot;&gt;&lt;/script&gt; 
+    &lt;script src=&quot;js/angulartics-google-analytics.min.js&quot;&gt;&lt;/script&gt; 
+    &lt;script src=&quot;js/angular-slider.js&quot;&gt;&lt;/script&gt; 
+    &lt;script src=&quot;js/mainlib.js&quot;&gt;&lt;/script&gt; 
+ 
+    &lt;script src=&quot;js/html2canvas.js&quot;&gt;&lt;/script&gt; 
+    &lt;script src=&quot;js/ui-bootstrap-tpls-0.6.0.js&quot;&gt;&lt;/script&gt; 
+    &lt;script src=&quot;js/angular-cookies-1.0.0rc10.js&quot;&gt;&lt;/script&gt; 
+ 
+  &lt;/body&gt; 
+&lt;/html&gt; 
+</span></pre>
+</body>
+</html>

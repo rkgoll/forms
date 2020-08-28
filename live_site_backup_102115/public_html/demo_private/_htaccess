@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Management Only. Stop and Enter Details"
+AuthUserFile /home3/lendlift/public_html/demo_private/.htmyxyz
+require valid-user

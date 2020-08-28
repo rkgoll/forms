@@ -1,0 +1,87 @@
+---
+layout: default
+---
+
+      
+<div class="page-container">
+  
+  {% include header.html %}
+  
+  <div class="wrapper">
+    
+    <form method="post" action="lluserapplicationform.php" onsubmit="return window.confirm('By selecting OK: I have reviewed and consent to the Credit Authorization. I agree to the Terms &amp; Conditions. I agree to the Privacy Statement.');">
+    <section>
+      
+      <div class="page">
+          <ul>
+            <li>Low fixed rates</li>
+            <li>Fast approval</li>
+            <li>No hidden fees</li>
+            <li><strong>Your debt free life awaits!</strong></li> 
+          </ul>
+
+        <div class="form">
+         
+          <span><input name="firstname" type="text"><label>First Name</label></span>
+          <span><input name="lastname" type="text"><label>Last Name</label></span>
+          <span><input name="emailaddress" type="text"><label>Email</label></span>
+          <span><input type="button" value="Continue" id="btn_continue"></span>
+        </div>
+      </div>
+      
+
+
+    </section>
+    <section>
+      <div class="page">
+        <div class="form">         
+          <span><input name="zipcode" type="text"><label>ZIP Code</label></span>
+          <span><input name="ssn" type="text"><label>Social Security Number</label></span>
+          <span><input name="loanamt" type="text"><label>Loan Amount</label></span>
+          <span>
+            <select name="creditscore" style="margin-top:20px; width: 100%; border: 2px solid green; font-size: 12px; height: 30px; line-height: 30px; display: block;"> 
+            
+            <option value="" selected>Select a range</option>
+            <option value="1">Greater than 700</option>
+            <option value="2">660 - 700</option>
+            <option value="3">630 - 660</option>
+            <option value="4">600 - 630</option>
+            <option value="5">Less than 600 </option>
+            <option value="0">Don't know</option>
+
+            </select>
+
+            <label>Credit Score Range</label>
+          </span>
+         
+          <span><input name="currentMinPayment" id="range1" type="range" min="0" max="1000" value="0" oninput="rangevalue1.value=value">$<output id="rangevalue1">0</output>
+          <label>Current Minimum Payment (Optional)</label>
+          </span>
+          <span>
+          <input name="prefminpayment" id="range2" type="range" min="0" max="1000" value="0" oninput="rangevalue2.value=value">$<output id="rangevalue2">0</output>
+          <label>Preferred Minimum Payment (Optional)</label>
+          </span>
+          <span>
+          <input name="prefloanduration" id="range3" type="range" min="0" max="60" value="0" oninput="rangevalue3.value=value"><output id="rangevalue3">0</output> months
+          <label>Preferred Loan Duration (Optional)</label>
+          </span>
+
+         
+          
+          <span><input type="submit" value="Submit" id="btn_submit"></span>
+        </div>
+      </div>
+    </section>
+
+    </form>
+  </div>
+
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('#btn_continue').click(function(){
+      $('.wrapper').css('left', '-100%');
+    });
+  });
+</script>
